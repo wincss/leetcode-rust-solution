@@ -1,4 +1,5 @@
 pub struct Solution;
+pub mod can_finish;
 pub mod flatten;
 pub mod invert_binary_tree;
 pub mod minimal_steps;

@@ -3,6 +3,7 @@ pub mod can_finish;
 pub mod flatten;
 pub mod invert_binary_tree;
 pub mod minimal_steps;
+pub mod two_sum;
 
 use std::cell::RefCell;
 use std::collections::VecDeque;

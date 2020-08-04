@@ -1,6 +1,8 @@
-use crate::Solution;
+use crate::*;
+
 use std::cmp;
 use std::collections::{HashMap, HashSet, VecDeque};
+
 impl Solution {
     pub fn minimal_steps(maze: Vec<String>) -> i32 {
         let n = maze.len() as i32;
@@ -141,43 +143,5 @@ impl Solution {
             std::i32::MAX => -1,
             ans => ans,
         }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use crate::*;
-
-    #[test]
-    fn case_1() {
-        assert_eq!(
-            Solution::minimal_steps(to_string_vec(&["S#O", "M..", "M.T"])),
-            16
-        );
-    }
-
-    #[test]
-    fn case_2() {
-        assert_eq!(
-            Solution::minimal_steps(to_string_vec(&["S#O", "M.#", "M.T"])),
-            -1
-        );
-    }
-
-    #[test]
-    fn case_3() {
-        assert_eq!(
-            Solution::minimal_steps(to_string_vec(&["S#O", "M.T", "M.."])),
-            17
-        );
-    }
-
-    #[test]
-    fn case_4() {
-        assert_eq!(
-            Solution::minimal_steps(to_string_vec(&["MMMMM", "MS#MM", "MM#TO"])),
-            95
-        );
     }
 }

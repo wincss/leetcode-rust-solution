@@ -11,10 +11,10 @@ impl Solution {
             }
             let mut ans = Vec::new();
             for i in 0..n {
-                for mut l in maketree(i, offset).into_iter() {
+                for l in maketree(i, offset).iter() {
                     for mut r in maketree(n - 1 - i, offset + i + 1).into_iter() {
                         let mut root = TreeNode::new(i + offset);
-                        root.left = l.take();
+                        root.left = l.as_ref().and_then(|v| Some(Rc::clone(v)));
                         root.right = r.take();
                         ans.push(Some(Rc::new(RefCell::new(root))));
                     }

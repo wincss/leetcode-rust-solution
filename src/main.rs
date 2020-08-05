@@ -19,4 +19,11 @@ fn main() {
     println!("inv_tree = {:?}", inv_tree);
     Solution::flatten(&mut inv_tree);
     println!("after flatten = {:?}", inv_tree);
+
+    println!("All binary search tree with 5 elements:");
+
+    let trees = Solution::generate_trees(5);
+    for t in trees.iter() {
+        println!("{}", t.as_ref().unwrap().borrow());
+    }
 }

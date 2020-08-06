@@ -12,6 +12,7 @@ pub mod invert_binary_tree;
 pub mod is_same_tree;
 pub mod length_of_longest_substring;
 pub mod minimal_steps;
+pub mod palindrome_pairs;
 pub mod reverse;
 pub mod rob_iii;
 pub mod two_sum;

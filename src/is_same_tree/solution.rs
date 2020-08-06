@@ -24,5 +24,11 @@ impl Solution {
                 p.right.as_ref().and_then(|v| Some(Rc::clone(v))),
                 q.right.as_ref().and_then(|v| Some(Rc::clone(v))),
             );
+
+        // let mut p = p.as_ref().unwrap().borrow_mut();
+        // let mut q = q.as_ref().unwrap().borrow_mut();
+        // return p.val == q.val
+        //     && Solution::is_same_tree(p.left.take(), q.left.take())
+        //     && Solution::is_same_tree(p.right.take(), q.right.take());
     }
 }

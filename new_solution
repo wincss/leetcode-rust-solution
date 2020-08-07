@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+DIR="src/$1"
+test -d "src" || exit
+test -e "$DIR" && exit
+mkdir "$DIR"
+
+cat > "$DIR/mod.rs" <<EOF
+mod solution;
+#[cfg(test)]
+mod tests;
+EOF
+
+cat > "$DIR/tests.rs" <<EOF
+use crate::*;
+
+#[test]
+fn case_1() {
+    todo!();
+}
+EOF
+
+cat > "$DIR/solution.rs" <<EOF
+use crate::*;
+
+impl Solution {
+    pub fn $1() {
+        todo!();
+    }
+}
+EOF
+
+echo "pub mod $1;" >> src/lib.rs
+rustfmt src/lib.rs

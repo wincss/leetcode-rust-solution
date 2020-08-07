@@ -86,4 +86,55 @@ impl TreeNode {
         }
         root
     }
+
+    pub fn preorder(&self) -> Vec<i32> {
+        let mut ans = vec![self.val];
+        ans.extend(
+            self.left
+                .as_ref()
+                .and_then(|v| Some(v.borrow().preorder()))
+                .unwrap_or(vec![]),
+        );
+        ans.extend(
+            self.right
+                .as_ref()
+                .and_then(|v| Some(v.borrow().preorder()))
+                .unwrap_or(vec![]),
+        );
+        ans
+    }
+    pub fn inorder(&self) -> Vec<i32> {
+        let mut ans = vec![];
+        ans.extend(
+            self.left
+                .as_ref()
+                .and_then(|v| Some(v.borrow().inorder()))
+                .unwrap_or(vec![]),
+        );
+        ans.push(self.val);
+        ans.extend(
+            self.right
+                .as_ref()
+                .and_then(|v| Some(v.borrow().inorder()))
+                .unwrap_or(vec![]),
+        );
+        ans
+    }
+    pub fn postorder(&self) -> Vec<i32> {
+        let mut ans = vec![];
+        ans.extend(
+            self.left
+                .as_ref()
+                .and_then(|v| Some(v.borrow().postorder()))
+                .unwrap_or(vec![]),
+        );
+        ans.extend(
+            self.right
+                .as_ref()
+                .and_then(|v| Some(v.borrow().postorder()))
+                .unwrap_or(vec![]),
+        );
+        ans.push(self.val);
+        ans
+    }
 }

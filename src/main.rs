@@ -20,9 +20,14 @@ fn main() {
     Solution::flatten(&mut inv_tree);
     println!("after flatten = {:?}", inv_tree);
 
-    println!("All binary search tree with 5 elements:");
+    let nums = 5;
 
-    let trees = Solution::generate_trees(5);
+    let trees = Solution::generate_trees(nums);
+    println!(
+        "{} binary search trees with {} elements:",
+        trees.len(),
+        nums
+    );
     for t in trees.iter() {
         println!("{}", t.as_ref().unwrap().borrow());
     }

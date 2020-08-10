@@ -19,4 +19,5 @@ pub mod recover_tree;
 pub mod restore_ip_addresses;
 pub mod reverse;
 pub mod rob_iii;
+pub mod solve;
 pub mod two_sum;

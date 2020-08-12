@@ -14,6 +14,7 @@ pub mod is_same_tree;
 pub mod length_of_longest_substring;
 pub mod longest_awesome;
 pub mod minimal_steps;
+pub mod multiply;
 pub mod palindrome_pairs;
 pub mod recover_tree;
 pub mod restore_ip_addresses;

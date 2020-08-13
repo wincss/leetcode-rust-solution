@@ -7,6 +7,7 @@ pub struct Solution;
 pub mod add_two_numbers;
 pub mod can_finish;
 pub mod count_binary_substrings;
+pub mod find_median_sorted_arrays;
 pub mod flatten;
 pub mod generate_trees;
 pub mod invert_binary_tree;

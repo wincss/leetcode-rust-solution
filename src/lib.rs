@@ -12,6 +12,7 @@ pub mod find_median_sorted_arrays;
 pub mod flatten;
 pub mod generate_trees;
 pub mod invert_binary_tree;
+pub mod is_balanced;
 pub mod is_same_tree;
 pub mod is_valid;
 pub mod length_of_longest_substring;

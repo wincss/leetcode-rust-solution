@@ -1,11 +1,14 @@
 use crate::*;
 
+use std::cmp::{PartialEq, PartialOrd};
 use std::collections::HashMap;
+use std::fmt::Debug;
+use std::ops::{Deref, DerefMut};
 
-#[derive(Debug, PartialEq, Eq)]
-enum Token {
+#[derive(Debug, PartialEq)]
+enum Token<'a> {
     Number(i32),
-    Operator(String),
+    Operator(&'a OperatorInfo),
     Parentheses(bool),
 }
 
@@ -17,11 +20,48 @@ struct OperatorInfo {
     precedence: u8,
 }
 
-type OperatorMap = HashMap<&'static str, OperatorInfo>;
+impl Debug for OperatorInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::result::Result<(), std::fmt::Error> {
+        write!(f, "\"{}\"", self.symbol)
+    }
+}
+
+impl PartialEq for OperatorInfo {
+    fn eq(&self, other: &Self) -> bool {
+        self.precedence == other.precedence
+    }
+}
+
+impl PartialOrd for OperatorInfo {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        self.precedence.partial_cmp(&other.precedence)
+    }
+}
+
+struct OperatorMap(HashMap<&'static str, OperatorInfo>);
+
+impl Deref for OperatorMap {
+    type Target = HashMap<&'static str, OperatorInfo>;
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl DerefMut for OperatorMap {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+
+impl OperatorMap {
+    fn add(&mut self, info: OperatorInfo) {
+        self.0.insert(info.symbol, info);
+    }
+}
 
 impl Solution {
     pub fn calculate(s: String) -> i32 {
-        fn parse_expression(s: &String, operators: &OperatorMap) -> Vec<Token> {
+        fn parse_expression<'a>(s: &String, operators: &'a OperatorMap) -> Vec<Token<'a>> {
             let mut result = vec![];
             let mut last_number = None;
             for &i in s.as_bytes() {
@@ -40,7 +80,9 @@ impl Solution {
                         }
                         b' ' => {}
                         v if operators.contains_key(&(v as char).to_string()[..]) => {
-                            result.push(Token::Operator((v as char).to_string()));
+                            result.push(Token::Operator(
+                                operators.get(&(v as char).to_string()[..]).unwrap(),
+                            ));
                         }
                         _ => unreachable!(),
                     }
@@ -51,7 +93,7 @@ impl Solution {
             }
             result
         }
-        fn generate_rpn(tokens: Vec<Token>, operators: &OperatorMap) -> Vec<Token> {
+        fn generate_rpn(tokens: Vec<Token>) -> Vec<Token> {
             let mut result = vec![];
             let mut ops = vec![];
             for i in tokens.into_iter() {
@@ -61,7 +103,7 @@ impl Solution {
                     Token::Operator(v) => {
                         while let Some(token) = ops.last() {
                             if let Token::Operator(v0) = token {
-                                if operators[&v0[..]].precedence < operators[&v[..]].precedence {
+                                if v0.precedence < v.precedence {
                                     break;
                                 }
                                 result.push(ops.pop().unwrap())
@@ -86,13 +128,13 @@ impl Solution {
             }
             result
         }
-        fn calc_rpn(tokens: Vec<Token>, operators: &OperatorMap) -> i32 {
+        fn calc_rpn(tokens: Vec<Token>) -> i32 {
             let mut stack = vec![];
             for i in tokens.into_iter() {
                 match i {
                     Token::Number(v) => stack.push(v),
                     Token::Operator(v) => {
-                        (operators[&v[..]].operation)(&mut stack);
+                        (v.operation)(&mut stack);
                     }
                     _ => unreachable!(),
                 }
@@ -100,59 +142,47 @@ impl Solution {
             assert!(stack.len() == 1);
             stack.pop().unwrap()
         }
-        let mut operators: OperatorMap = HashMap::new();
-        operators.insert(
-            "+",
-            OperatorInfo {
-                symbol: "+",
-                operation: Box::new(|st: &mut Vec<i32>| {
-                    let a = st.pop().unwrap();
-                    let b = st.pop().unwrap();
-                    st.push(b + a);
-                }),
-                precedence: 1,
-            },
-        );
-        operators.insert(
-            "-",
-            OperatorInfo {
-                symbol: "-",
-                operation: Box::new(|st: &mut Vec<i32>| {
-                    let a = st.pop().unwrap();
-                    let b = st.pop().unwrap();
-                    st.push(b - a);
-                }),
-                precedence: 1,
-            },
-        );
-        operators.insert(
-            "*",
-            OperatorInfo {
-                symbol: "*",
-                operation: Box::new(|st: &mut Vec<i32>| {
-                    let a = st.pop().unwrap();
-                    let b = st.pop().unwrap();
-                    st.push(b * a);
-                }),
-                precedence: 2,
-            },
-        );
-        operators.insert(
-            "/",
-            OperatorInfo {
-                symbol: "/",
-                operation: Box::new(|st: &mut Vec<i32>| {
-                    let a = st.pop().unwrap();
-                    let b = st.pop().unwrap();
-                    st.push(b / a);
-                }),
-                precedence: 2,
-            },
-        );
+        let mut operators = OperatorMap(HashMap::new());
+        operators.add(OperatorInfo {
+            symbol: "+",
+            operation: Box::new(|st: &mut Vec<i32>| {
+                let a = st.pop().unwrap();
+                let b = st.pop().unwrap();
+                st.push(b + a);
+            }),
+            precedence: 1,
+        });
+        operators.add(OperatorInfo {
+            symbol: "-",
+            operation: Box::new(|st: &mut Vec<i32>| {
+                let a = st.pop().unwrap();
+                let b = st.pop().unwrap();
+                st.push(b - a);
+            }),
+            precedence: 1,
+        });
+        operators.add(OperatorInfo {
+            symbol: "*",
+            operation: Box::new(|st: &mut Vec<i32>| {
+                let a = st.pop().unwrap();
+                let b = st.pop().unwrap();
+                st.push(b * a);
+            }),
+            precedence: 2,
+        });
+        operators.add(OperatorInfo {
+            symbol: "/",
+            operation: Box::new(|st: &mut Vec<i32>| {
+                let a = st.pop().unwrap();
+                let b = st.pop().unwrap();
+                st.push(b / a);
+            }),
+            precedence: 2,
+        });
         let expr = parse_expression(&s, &operators);
         // println!("{:?}", expr);
-        let rpn = generate_rpn(expr, &operators);
+        let rpn = generate_rpn(expr);
         // println!("{:?}", rpn);
-        calc_rpn(rpn, &operators)
+        calc_rpn(rpn)
     }
 }

@@ -31,4 +31,6 @@ fn main() {
     for t in trees.iter() {
         println!("{}", t.as_ref().unwrap().borrow());
     }
+    let s = stringify!(1 + 2 * 4 - 8 * 3 + 25);
+    println!("{} = {}", s, Solution::calculate(s.to_string()));
 }

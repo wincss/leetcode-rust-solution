@@ -25,4 +25,5 @@ pub mod restore_ip_addresses;
 pub mod reverse;
 pub mod rob_iii;
 pub mod solve;
+pub mod sorted_list_to_bst;
 pub mod two_sum;

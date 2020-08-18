@@ -6,62 +6,65 @@ use std::fmt::Debug;
 use std::ops::{Deref, DerefMut};
 
 #[derive(Debug, PartialEq)]
-enum Token<'a> {
-    Number(i32),
-    Operator(&'a OperatorInfo),
+enum Token<'a, T> {
+    Number(T),
+    Operator(&'a OperatorInfo<T>),
     Parentheses(bool),
 }
 
-type F = dyn Fn(&mut Vec<i32>) -> ();
+type F<T> = dyn Fn(&mut Vec<T>) -> ();
 
-struct OperatorInfo {
+struct OperatorInfo<T> {
     symbol: &'static str,
-    operation: Box<F>,
+    operation: Box<F<T>>,
     precedence: u8,
 }
 
-impl Debug for OperatorInfo {
+impl<T> Debug for OperatorInfo<T> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::result::Result<(), std::fmt::Error> {
         write!(f, "\"{}\"", self.symbol)
     }
 }
 
-impl PartialEq for OperatorInfo {
+impl<T> PartialEq for OperatorInfo<T> {
     fn eq(&self, other: &Self) -> bool {
         self.precedence == other.precedence
     }
 }
 
-impl PartialOrd for OperatorInfo {
+impl<T> PartialOrd for OperatorInfo<T> {
     fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
         self.precedence.partial_cmp(&other.precedence)
     }
 }
 
-struct OperatorMap(HashMap<&'static str, OperatorInfo>);
+struct OperatorMap<T>(HashMap<&'static str, OperatorInfo<T>>);
 
-impl Deref for OperatorMap {
-    type Target = HashMap<&'static str, OperatorInfo>;
+impl<T> Deref for OperatorMap<T> {
+    type Target = HashMap<&'static str, OperatorInfo<T>>;
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
 
-impl DerefMut for OperatorMap {
+impl<T> DerefMut for OperatorMap<T> {
     fn deref_mut(&mut self) -> &mut Self::Target {
         &mut self.0
     }
 }
 
-impl OperatorMap {
-    fn add(&mut self, info: OperatorInfo) {
+impl<T> OperatorMap<T> {
+    fn add(&mut self, info: OperatorInfo<T>) {
         self.0.insert(info.symbol, info);
     }
 }
 
 impl Solution {
     pub fn calculate(s: String) -> i32 {
-        fn parse_expression<'a>(s: &String, operators: &'a OperatorMap) -> Vec<Token<'a>> {
+        fn parse_expression<'a>(
+            s: &String,
+            operators: &'a OperatorMap<i32>,
+        ) -> Vec<Token<'a, i32>> {
             let mut result = vec![];
             let mut last_number = None;
             for &i in s.as_bytes() {
@@ -93,7 +96,7 @@ impl Solution {
             }
             result
         }
-        fn generate_rpn(tokens: Vec<Token>) -> Vec<Token> {
+        fn generate_rpn(tokens: Vec<Token<i32>>) -> Vec<Token<i32>> {
             let mut result = vec![];
             let mut ops = vec![];
             for i in tokens.into_iter() {
@@ -128,7 +131,7 @@ impl Solution {
             }
             result
         }
-        fn calc_rpn(tokens: Vec<Token>) -> i32 {
+        fn calc_rpn(tokens: Vec<Token<i32>>) -> i32 {
             let mut stack = vec![];
             for i in tokens.into_iter() {
                 match i {

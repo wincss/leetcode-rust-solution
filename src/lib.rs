@@ -18,6 +18,7 @@ pub mod is_same_tree;
 pub mod is_valid;
 pub mod length_of_longest_substring;
 pub mod longest_awesome;
+pub mod min_depth;
 pub mod minimal_steps;
 pub mod multiply;
 pub mod palindrome_pairs;

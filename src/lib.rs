@@ -23,6 +23,7 @@ pub mod min_depth;
 pub mod minimal_steps;
 pub mod multiply;
 pub mod palindrome_pairs;
+pub mod range_bitwise_and;
 pub mod recover_tree;
 pub mod restore_ip_addresses;
 pub mod reverse;

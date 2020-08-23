@@ -25,6 +25,7 @@ pub mod multiply;
 pub mod palindrome_pairs;
 pub mod range_bitwise_and;
 pub mod recover_tree;
+pub mod repeated_substring_pattern;
 pub mod restore_ip_addresses;
 pub mod reverse;
 pub mod rob_iii;

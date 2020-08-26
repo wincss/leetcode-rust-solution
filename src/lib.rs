@@ -19,6 +19,7 @@ pub mod is_same_tree;
 pub mod is_valid;
 pub mod judge_point24;
 pub mod length_of_longest_substring;
+pub mod letter_combinations;
 pub mod longest_awesome;
 pub mod min_depth;
 pub mod minimal_steps;

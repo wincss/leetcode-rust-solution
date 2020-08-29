@@ -33,6 +33,7 @@ pub mod repeated_substring_pattern;
 pub mod restore_ip_addresses;
 pub mod reverse;
 pub mod rob_iii;
+pub mod shortest_palindrome;
 pub mod solve;
 pub mod sort_colors;
 pub mod sorted_list_to_bst;

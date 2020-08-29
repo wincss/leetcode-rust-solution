@@ -32,6 +32,7 @@ pub mod recover_tree;
 pub mod repeated_substring_pattern;
 pub mod restore_ip_addresses;
 pub mod reverse;
+pub mod reverse_words;
 pub mod rob_iii;
 pub mod shortest_palindrome;
 pub mod solve;

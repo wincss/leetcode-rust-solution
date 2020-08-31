@@ -20,6 +20,7 @@ pub mod is_same_tree;
 pub mod is_valid;
 pub mod judge_circle;
 pub mod judge_point24;
+pub mod knight_probability;
 pub mod length_of_longest_substring;
 pub mod letter_combinations;
 pub mod longest_awesome;

@@ -41,5 +41,6 @@ pub mod shortest_palindrome;
 pub mod solve;
 pub mod sort_colors;
 pub mod sorted_list_to_bst;
+pub mod stone_game;
 pub mod two_sum;
 pub mod update_board;

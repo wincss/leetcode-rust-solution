@@ -6,9 +6,7 @@ use std::rc::Rc;
 impl Solution {
     pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
         fn get_child(child: &Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-            child
-                .as_ref()
-                .and_then(|v: &Rc<RefCell<TreeNode>>| Some(Rc::clone(&v)))
+            child.as_ref().map(Rc::clone)
         }
         match root {
             None => None,

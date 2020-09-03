@@ -5,7 +5,7 @@ use std::collections::VecDeque;
 impl Solution {
     pub fn solve(board: &mut Vec<Vec<char>>) {
         let n = board.len();
-        let m = board.get(0).and_then(|v| Some(v.len())).unwrap_or(0);
+        let m = board.get(0).map(|v| v.len()).unwrap_or(0);
 
         fn flood_fill(board: &mut Vec<Vec<char>>, n: usize, m: usize, x: usize, y: usize) {
             board[x][y] = 'K';

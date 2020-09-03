@@ -14,7 +14,7 @@ impl Solution {
                 for l in maketree(i, offset).iter() {
                     for mut r in maketree(n - 1 - i, offset + i + 1).into_iter() {
                         let mut root = TreeNode::new(i + offset);
-                        root.left = l.as_ref().and_then(|v| Some(Rc::clone(v)));
+                        root.left = l.as_ref().map(Rc::clone);
                         root.right = r.take();
                         ans.push(Some(Rc::new(RefCell::new(root))));
                     }

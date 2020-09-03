@@ -17,12 +17,12 @@ impl Solution {
         let q = q.as_ref().unwrap().borrow();
         return p.val == q.val
             && Solution::is_same_tree(
-                p.left.as_ref().and_then(|v| Some(Rc::clone(v))),
-                q.left.as_ref().and_then(|v| Some(Rc::clone(v))),
+                p.left.as_ref().map(Rc::clone),
+                q.left.as_ref().map(Rc::clone),
             )
             && Solution::is_same_tree(
-                p.right.as_ref().and_then(|v| Some(Rc::clone(v))),
-                q.right.as_ref().and_then(|v| Some(Rc::clone(v))),
+                p.right.as_ref().map(Rc::clone),
+                q.right.as_ref().map(Rc::clone),
             );
 
         // let mut p = p.as_ref().unwrap().borrow_mut();

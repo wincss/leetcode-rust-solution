@@ -40,15 +40,15 @@ impl TreeNode {
         let mut output = Vec::new();
         let mut queue = VecDeque::new();
         output.push(Some(self.val));
-        queue.push_back(self.left.as_ref().and_then(|v| Some(Rc::clone(&v))));
-        queue.push_back(self.right.as_ref().and_then(|v| Some(Rc::clone(&v))));
+        queue.push_back(self.left.as_ref().map(Rc::clone));
+        queue.push_back(self.right.as_ref().map(Rc::clone));
         while let Some(v) = queue.pop_front() {
             output.push(match v {
                 None => None,
                 Some(node) => {
                     let node = node.borrow();
-                    queue.push_back(node.left.as_ref().and_then(|v| Some(Rc::clone(v))));
-                    queue.push_back(node.right.as_ref().and_then(|v| Some(Rc::clone(v))));
+                    queue.push_back(node.left.as_ref().map(Rc::clone));
+                    queue.push_back(node.right.as_ref().map(Rc::clone));
                     Some(node.val)
                 }
             })
@@ -92,13 +92,13 @@ impl TreeNode {
         ans.extend(
             self.left
                 .as_ref()
-                .and_then(|v| Some(v.borrow().preorder()))
+                .map(|v| v.borrow().preorder())
                 .unwrap_or(vec![]),
         );
         ans.extend(
             self.right
                 .as_ref()
-                .and_then(|v| Some(v.borrow().preorder()))
+                .map(|v| v.borrow().preorder())
                 .unwrap_or(vec![]),
         );
         ans
@@ -108,14 +108,14 @@ impl TreeNode {
         ans.extend(
             self.left
                 .as_ref()
-                .and_then(|v| Some(v.borrow().inorder()))
+                .map(|v| v.borrow().inorder())
                 .unwrap_or(vec![]),
         );
         ans.push(self.val);
         ans.extend(
             self.right
                 .as_ref()
-                .and_then(|v| Some(v.borrow().inorder()))
+                .map(|v| v.borrow().inorder())
                 .unwrap_or(vec![]),
         );
         ans
@@ -125,13 +125,13 @@ impl TreeNode {
         ans.extend(
             self.left
                 .as_ref()
-                .and_then(|v| Some(v.borrow().postorder()))
+                .map(|v| v.borrow().postorder())
                 .unwrap_or(vec![]),
         );
         ans.extend(
             self.right
                 .as_ref()
-                .and_then(|v| Some(v.borrow().postorder()))
+                .map(|v| v.borrow().postorder())
                 .unwrap_or(vec![]),
         );
         ans.push(self.val);

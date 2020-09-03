@@ -14,7 +14,7 @@ impl Solution {
             Some(
                 1 + left
                     .xor(right)
-                    .or_else(|| left.and_then(|v| Some(std::cmp::min(v, right.unwrap()))))
+                    .or_else(|| left.map(|v| std::cmp::min(v, right.unwrap())))
                     .unwrap_or(0),
             )
         }

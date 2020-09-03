@@ -13,6 +13,7 @@ pub mod count_binary_substrings;
 pub mod count_substrings;
 pub mod find_itinerary;
 pub mod find_median_sorted_arrays;
+pub mod find_order;
 pub mod find_subsequences;
 pub mod flatten;
 pub mod generate_trees;

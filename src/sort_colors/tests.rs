@@ -32,5 +32,5 @@ fn case_4() {
 fn case_5() {
     let mut nums = vec![];
     Solution::sort_colors(&mut nums);
-    assert_eq!(nums, vec![]);
+    assert_eq!(nums, Vec::<i32>::new());
 }

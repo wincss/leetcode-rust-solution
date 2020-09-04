@@ -17,5 +17,5 @@ fn case_2() {
 #[test]
 fn case_3() {
     let output = Solution::find_order(4, vec![vec![1, 0], vec![2, 1], vec![1, 3], vec![3, 2]]);
-    assert_eq!(output, vec![]);
+    assert_eq!(output, Vec::<i32>::new());
 }

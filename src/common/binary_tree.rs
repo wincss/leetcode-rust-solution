@@ -1,3 +1,4 @@
+use serde_json::Value;
 use std::cell::RefCell;
 use std::collections::VecDeque;
 use std::fmt::Display;
@@ -57,6 +58,22 @@ impl TreeNode {
             output.pop();
         }
         output
+    }
+    pub fn from_json(list: Value) -> Option<Rc<RefCell<Self>>> {
+        let mut input = vec![];
+        match list {
+            Value::Array(list) => {
+                for i in list {
+                    match i {
+                        Value::Number(val) => input.push(val.as_i64().map(|v| v as i32)),
+                        Value::Null => input.push(None),
+                        _ => unreachable!(),
+                    }
+                }
+            }
+            _ => unreachable!(),
+        }
+        Self::from_array(&input[..])
     }
 
     pub fn from_array(list: &[Option<i32>]) -> Option<Rc<RefCell<Self>>> {

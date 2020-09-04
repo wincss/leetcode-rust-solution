@@ -1,5 +1,6 @@
 use crate::TreeNode;
 
+use serde_json::json;
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -20,6 +21,27 @@ fn create_treenode() {
 
     assert_eq!(
         TreeNode::from_array(&[Some(1), None, Some(2), Some(3)]),
+        Some(Rc::new(RefCell::new(first)))
+    );
+}
+
+#[test]
+#[ignore]
+fn create_treenode_from_json() {
+    let third = TreeNode::new(3);
+    let second = TreeNode {
+        val: 2,
+        left: Some(Rc::new(RefCell::new(third))),
+        right: None,
+    };
+    let first = TreeNode {
+        val: 1,
+        left: None,
+        right: Some(Rc::new(RefCell::new(second))),
+    };
+
+    assert_eq!(
+        TreeNode::from_json(json!([1, null, 2, 3])),
         Some(Rc::new(RefCell::new(first)))
     );
 }

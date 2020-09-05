@@ -27,6 +27,7 @@ pub mod judge_point24;
 pub mod knight_probability;
 pub mod length_of_longest_substring;
 pub mod letter_combinations;
+pub mod level_order_bottom;
 pub mod longest_awesome;
 pub mod min_depth;
 pub mod minimal_steps;

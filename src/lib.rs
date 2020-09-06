@@ -30,6 +30,7 @@ pub mod length_of_longest_substring;
 pub mod letter_combinations;
 pub mod level_order_bottom;
 pub mod longest_awesome;
+pub mod make_connected;
 pub mod min_depth;
 pub mod minimal_steps;
 pub mod multiply;

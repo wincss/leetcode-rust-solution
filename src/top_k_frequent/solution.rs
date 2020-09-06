@@ -9,7 +9,7 @@ impl Solution {
             *v += 1;
         }
         let mut keys = count.keys().map(|v| *v).collect::<Vec<i32>>();
-        keys.sort_by(|a, b| count[b].cmp(&count[a]));
-        Vec::from(&keys[..k as usize])
+        keys.sort_unstable_by_key(|v| count[v]);
+        Vec::from(&keys[keys.len() - k as usize..])
     }
 }

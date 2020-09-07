@@ -17,6 +17,7 @@ pub mod find_itinerary;
 pub mod find_median_sorted_arrays;
 pub mod find_order;
 pub mod find_subsequences;
+pub mod find_whether_exists_path;
 pub mod flatten;
 pub mod generate_trees;
 pub mod get_permutation;

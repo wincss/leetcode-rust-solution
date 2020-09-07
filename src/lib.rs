@@ -7,6 +7,7 @@ pub struct Solution;
 pub mod add_two_numbers;
 pub mod binary_tree_paths;
 pub mod calculate;
+pub mod can_complete_circuit;
 pub mod can_finish;
 pub mod can_visit_all_rooms;
 pub mod count_binary_substrings;

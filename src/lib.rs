@@ -34,6 +34,7 @@ pub mod level_order_bottom;
 pub mod longest_awesome;
 pub mod make_connected;
 pub mod max_num_edges_to_remove;
+pub mod merge_k_lists;
 pub mod min_depth;
 pub mod minimal_steps;
 pub mod multiply;

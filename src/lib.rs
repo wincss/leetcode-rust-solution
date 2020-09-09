@@ -57,5 +57,6 @@ pub mod sorted_list_to_bst;
 pub mod stone_game;
 pub mod title_to_number;
 pub mod top_k_frequent;
+pub mod total_n_queens;
 pub mod two_sum;
 pub mod update_board;

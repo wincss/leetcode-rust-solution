@@ -18,18 +18,10 @@ fn check_answer(k: i32, n: i32, expect: Vec<Vec<i32>>) {
 }
 #[test]
 fn case_1() {
-    check_answer(
-        3,
-        7,
-        vec![vec![1, 2,4]],
-    );
+    check_answer(3, 7, vec![vec![1, 2, 4]]);
 }
 
 #[test]
 fn case_2() {
-    check_answer(
-        3,
-        9,
-        vec![vec![1,2,6], vec![1,3,5], vec![2,3,4]],
-    );
+    check_answer(3, 9, vec![vec![1, 2, 6], vec![1, 3, 5], vec![2, 3, 4]]);
 }

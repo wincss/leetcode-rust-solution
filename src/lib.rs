@@ -27,6 +27,7 @@ pub mod generate_trees;
 pub mod get_permutation;
 pub mod invert_binary_tree;
 pub mod is_balanced;
+pub mod is_power_of_two;
 pub mod is_same_tree;
 pub mod is_valid;
 pub mod judge_circle;

@@ -17,6 +17,7 @@ pub mod combination_sum3;
 pub mod combine;
 pub mod count_binary_substrings;
 pub mod count_substrings;
+pub mod exist;
 pub mod find_itinerary;
 pub mod find_median_sorted_arrays;
 pub mod find_order;

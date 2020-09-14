@@ -59,6 +59,7 @@ pub mod rob_iii;
 pub mod shortest_palindrome;
 pub mod solve;
 pub mod solve_n_queens;
+pub mod solve_sudoku;
 pub mod sort_colors;
 pub mod sorted_list_to_bst;
 pub mod stone_game;

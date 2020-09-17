@@ -49,6 +49,7 @@ pub mod min_depth;
 pub mod minimal_steps;
 pub mod multiply;
 pub mod palindrome_pairs;
+pub mod permute_unique;
 pub mod predict_the_winner;
 pub mod range_bitwise_and;
 pub mod recover_tree;

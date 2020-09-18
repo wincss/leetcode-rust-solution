@@ -65,6 +65,7 @@ pub mod solve_sudoku;
 pub mod sort_colors;
 pub mod sorted_list_to_bst;
 pub mod stone_game;
+pub mod sum_of_left_leaves;
 pub mod title_to_number;
 pub mod top_k_frequent;
 pub mod total_n_queens;

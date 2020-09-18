@@ -70,3 +70,4 @@ pub mod top_k_frequent;
 pub mod total_n_queens;
 pub mod two_sum;
 pub mod update_board;
+pub mod ways_to_step;

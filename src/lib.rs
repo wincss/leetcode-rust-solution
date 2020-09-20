@@ -15,6 +15,7 @@ pub mod combination_sum;
 pub mod combination_sum2;
 pub mod combination_sum3;
 pub mod combine;
+pub mod convert_bst;
 pub mod count_binary_substrings;
 pub mod count_substrings;
 pub mod exist;

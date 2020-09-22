@@ -18,12 +18,12 @@ impl Solution {
             let left_state = cover(root.left.as_ref().map(Rc::clone), result);
             let right_state = cover(root.right.as_ref().map(Rc::clone), result);
             match (left_state, right_state) {
-                (State::Monitored, State::Monitored) => State::Unmonitored,
-                (State::Installed, _) | (_, State::Installed) => State::Monitored,
                 (State::Unmonitored, _) | (_, State::Unmonitored) => {
                     *result += 1;
                     State::Installed
                 }
+                (State::Monitored, State::Monitored) => State::Unmonitored,
+                (State::Installed, _) | (_, State::Installed) => State::Monitored,
             }
         }
         let mut result = 0;

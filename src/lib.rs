@@ -57,6 +57,7 @@ pub mod multiply;
 pub mod palindrome_pairs;
 pub mod path_sum;
 pub mod permute_unique;
+pub mod postorder_traversal;
 pub mod predict_the_winner;
 pub mod range_bitwise_and;
 pub mod recover_tree;

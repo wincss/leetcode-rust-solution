@@ -33,6 +33,7 @@ pub mod flatten;
 pub mod generate_trees;
 pub mod get_permutation;
 pub mod inorder_traversal;
+pub mod insert_into_bst;
 pub mod invert_binary_tree;
 pub mod is_balanced;
 pub mod is_power_of_two;

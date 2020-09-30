@@ -54,6 +54,7 @@ pub mod merge_two_lists;
 pub mod min_camera_cover;
 pub mod min_depth;
 pub mod minimal_steps;
+pub mod minimum_operations;
 pub mod multiply;
 pub mod palindrome_pairs;
 pub mod path_sum;

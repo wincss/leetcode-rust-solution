@@ -56,6 +56,7 @@ pub mod min_depth;
 pub mod minimal_steps;
 pub mod minimum_operations;
 pub mod multiply;
+pub mod num_jewels_in_stones;
 pub mod palindrome_pairs;
 pub mod path_sum;
 pub mod permute_unique;

@@ -11,6 +11,7 @@ pub mod build_tree;
 pub mod calculate;
 pub mod can_complete_circuit;
 pub mod can_finish;
+pub mod can_partition;
 pub mod can_visit_all_rooms;
 pub mod combination_sum;
 pub mod combination_sum2;

@@ -34,6 +34,7 @@ pub mod find_whether_exists_path;
 pub mod flatten;
 pub mod four_sum;
 pub mod generate_trees;
+pub mod get_minimum_difference;
 pub mod get_permutation;
 pub mod inorder_traversal;
 pub mod insert_into_bst;

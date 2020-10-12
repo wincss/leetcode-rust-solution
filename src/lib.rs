@@ -85,6 +85,7 @@ pub mod stone_game;
 pub mod subsets;
 pub mod sum_of_distances_in_tree;
 pub mod sum_of_left_leaves;
+pub mod swap_pairs;
 pub mod title_to_number;
 pub mod top_k_frequent;
 pub mod total_n_queens;

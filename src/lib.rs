@@ -61,6 +61,7 @@ pub mod minimal_steps;
 pub mod minimum_one_bit_operations;
 pub mod minimum_operations;
 pub mod multiply;
+pub mod num_dup_digits_at_most_n;
 pub mod num_jewels_in_stones;
 pub mod palindrome_pairs;
 pub mod path_sum;

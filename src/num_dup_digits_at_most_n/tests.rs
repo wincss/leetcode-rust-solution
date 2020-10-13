@@ -14,3 +14,8 @@ fn case_2() {
 fn case_3() {
     assert_eq!(Solution::num_dup_digits_at_most_n(1000), 262);
 }
+
+#[test]
+fn case_4() {
+    assert_eq!(Solution::num_dup_digits_at_most_n(1000000000), 994388230);
+}

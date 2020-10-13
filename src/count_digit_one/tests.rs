@@ -19,3 +19,8 @@ fn case_3() {
 fn case_4() {
     assert_eq!(Solution::count_digit_one(100000000), 80000001);
 }
+
+#[test]
+fn case_5() {
+    assert_eq!(Solution::number_of2s_in_range(25), 9);
+}

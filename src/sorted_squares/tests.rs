@@ -15,3 +15,8 @@ fn case_2() {
         vec![4, 9, 9, 49, 121]
     );
 }
+
+#[test]
+fn case_3() {
+    assert_eq!(Solution::sorted_squares(vec![1]), vec![1]);
+}

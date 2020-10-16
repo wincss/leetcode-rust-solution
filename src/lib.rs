@@ -85,6 +85,7 @@ pub mod solve_n_queens;
 pub mod solve_sudoku;
 pub mod sort_colors;
 pub mod sorted_list_to_bst;
+pub mod sorted_squares;
 pub mod stone_game;
 pub mod subsets;
 pub mod sum_of_distances_in_tree;

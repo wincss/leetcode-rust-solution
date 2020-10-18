@@ -6,6 +6,7 @@ pub use common::TreeNode;
 pub struct Solution;
 pub mod add_two_numbers;
 pub mod average_of_levels;
+pub mod backspace_compare;
 pub mod binary_tree_paths;
 pub mod build_tree;
 pub mod calculate;

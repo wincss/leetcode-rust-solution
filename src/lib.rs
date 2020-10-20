@@ -45,6 +45,7 @@ pub mod inorder_traversal;
 pub mod insert_into_bst;
 pub mod invert_binary_tree;
 pub mod is_balanced;
+pub mod is_long_pressed_name;
 pub mod is_power_of_two;
 pub mod is_same_tree;
 pub mod is_valid;

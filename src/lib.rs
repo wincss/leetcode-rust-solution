@@ -72,6 +72,7 @@ pub mod multiply;
 pub mod num_dup_digits_at_most_n;
 pub mod num_jewels_in_stones;
 pub mod palindrome_pairs;
+pub mod partition_labels;
 pub mod path_sum;
 pub mod permute_unique;
 pub mod postorder_traversal;

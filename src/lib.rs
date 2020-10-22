@@ -4,6 +4,7 @@ pub use common::ListNode;
 pub use common::TreeNode;
 
 pub struct Solution;
+pub mod add_binary;
 pub mod add_two_numbers;
 pub mod average_of_levels;
 pub mod backspace_compare;

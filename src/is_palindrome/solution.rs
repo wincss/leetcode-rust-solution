@@ -2,36 +2,35 @@ use crate::*;
 
 impl Solution {
     pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
-        fn clone_mut_ref<T>(p: &mut T) -> (&mut T, &mut T) {
-            unsafe { (&mut *(p as *mut T), &mut *(p as *mut T)) }
+        if head.is_none() {
+            return true;
         }
-        let mut root = ListNode::new(0);
-        root.next = head;
-        let mut root = Some(Box::new(root));
-        let (mut slow, root) = clone_mut_ref(&mut root);
-        let (mut fast, root) = clone_mut_ref(root);
-        while fast.is_some() {
-            fast = &mut fast.as_mut().unwrap().next;
-            if fast.is_none() {
-                break;
+        let mut n = 0;
+        {
+            let mut root = &head;
+            while root.is_some() {
+                n += 1;
+                root = &root.as_ref().unwrap().next;
             }
-            fast = &mut fast.as_mut().unwrap().next;
-            slow = &mut slow.as_mut().unwrap().next;
         }
-        let mut tail = slow.as_mut().unwrap().next.take();
+        let mut head = head;
+        let mut half = &mut head;
+        for _ in 0..(n - 1) / 2 {
+            half = &mut half.as_mut().unwrap().next;
+        }
+        let mut half = half.as_mut().unwrap().next.take();
         let mut last = None;
-        while tail.is_some() {
-            let next = tail.as_mut().unwrap().next.take();
-            tail.as_mut().unwrap().next = last;
-            last = tail;
-            tail = next;
+        while half.is_some() {
+            let next = half.as_mut().unwrap().next.take();
+            half.as_mut().unwrap().next = last;
+            last = half;
+            half = next;
         }
-        let mut root = root.as_mut().unwrap().next.take();
-        while root.is_some() && last.is_some() {
-            if root.as_ref().unwrap().val != last.as_ref().unwrap().val {
+        while head.is_some() && last.is_some() {
+            if head.as_ref().unwrap().val != last.as_ref().unwrap().val {
                 return false;
             }
-            root = root.as_mut().unwrap().next.take();
+            head = head.as_mut().unwrap().next.take();
             last = last.as_mut().unwrap().next.take();
         }
         true

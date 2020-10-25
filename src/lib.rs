@@ -91,6 +91,7 @@ pub mod reverse_words;
 pub mod rob_iii;
 pub mod shortest_palindrome;
 pub mod single_numbers;
+pub mod smaller_numbers_than_current;
 pub mod solve;
 pub mod solve_n_queens;
 pub mod solve_sudoku;

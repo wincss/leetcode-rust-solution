@@ -101,6 +101,7 @@ pub mod sorted_list_to_bst;
 pub mod sorted_squares;
 pub mod stone_game;
 pub mod subsets;
+pub mod sum_numbers;
 pub mod sum_of_distances_in_tree;
 pub mod sum_of_left_leaves;
 pub mod swap_pairs;

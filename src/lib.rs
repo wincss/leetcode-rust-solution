@@ -114,3 +114,4 @@ pub mod unique_occurrences;
 pub mod update_board;
 pub mod video_stitching;
 pub mod ways_to_step;
+pub mod word_break;

@@ -44,6 +44,7 @@ pub mod get_permutation;
 pub mod group_the_people;
 pub mod inorder_traversal;
 pub mod insert_into_bst;
+pub mod intersection;
 pub mod invert_binary_tree;
 pub mod is_balanced;
 pub mod is_long_pressed_name;

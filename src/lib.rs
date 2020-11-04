@@ -113,6 +113,7 @@ pub mod total_n_queens;
 pub mod two_sum;
 pub mod unique_occurrences;
 pub mod update_board;
+pub mod valid_mountain_array;
 pub mod video_stitching;
 pub mod ways_to_step;
 pub mod word_break;

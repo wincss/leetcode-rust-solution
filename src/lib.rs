@@ -30,6 +30,7 @@ pub mod exist;
 pub mod expect_number;
 pub mod find_integers;
 pub mod find_itinerary;
+pub mod find_ladders;
 pub mod find_median_sorted_arrays;
 pub mod find_mode;
 pub mod find_order;

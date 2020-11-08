@@ -65,6 +65,7 @@ pub mod level_order_bottom;
 pub mod longest_awesome;
 pub mod make_connected;
 pub mod max_num_edges_to_remove;
+pub mod max_profit;
 pub mod merge_k_lists;
 pub mod merge_trees;
 pub mod merge_two_lists;

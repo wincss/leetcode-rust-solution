@@ -1,6 +1,17 @@
 use crate::*;
 
 impl Solution {
+    pub fn max_profit(prices: Vec<i32>) -> i32 {
+        let mut max = 0;
+        let mut buyprice = std::i32::MAX;
+        for i in prices {
+            if i < buyprice {
+                buyprice = i;
+            }
+            max = std::cmp::max(max, i - buyprice);
+        }
+        max
+    }
     pub fn max_profit_ii(prices: Vec<i32>) -> i32 {
         let mut empty = 0;
         let mut full = -prices[0];

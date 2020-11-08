@@ -57,6 +57,7 @@ pub mod is_valid;
 pub mod island_perimeter;
 pub mod judge_circle;
 pub mod judge_point24;
+pub mod k_closest;
 pub mod knight_probability;
 pub mod ladder_length;
 pub mod length_of_longest_substring;

@@ -35,6 +35,7 @@ pub mod find_median_sorted_arrays;
 pub mod find_mode;
 pub mod find_order;
 pub mod find_redundant_directed_connection;
+pub mod find_rotate_steps;
 pub mod find_subsequences;
 pub mod find_whether_exists_path;
 pub mod flatten;

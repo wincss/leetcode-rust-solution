@@ -13,18 +13,17 @@ impl Solution {
         let mut dp = vec![vec![0; n]; 2];
         for (i, c) in key.char_indices().rev() {
             for j in 0..n {
-                dp[i & 1][j] = if ring[j] == c {
-                    dp[i & 1 ^ 1][j]
-                } else {
-                    ring_char[&c]
-                        .iter()
-                        .map(|&k| {
-                            dp[i & 1 ^ 1][k]
-                                + std::cmp::min((k + n - j) % n, (j + n - k) % n) as i32
-                        })
-                        .min()
-                        .unwrap()
-                } + 1
+                if ring[j] == c {
+                    dp[i & 1][j] = 1 + dp[i & 1 ^ 1][j];
+                    continue;
+                }
+                dp[i & 1][j] = 1 + ring_char[&c]
+                    .iter()
+                    .map(|&k| {
+                        dp[i & 1 ^ 1][k] + std::cmp::min((k + n - j) % n, (j + n - k) % n) as i32
+                    })
+                    .min()
+                    .unwrap();
             }
         }
         dp[0][0]

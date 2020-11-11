@@ -105,6 +105,7 @@ pub mod smaller_numbers_than_current;
 pub mod solve;
 pub mod solve_n_queens;
 pub mod solve_sudoku;
+pub mod sort_array_by_parity_ii;
 pub mod sort_by_bits;
 pub mod sort_colors;
 pub mod sorted_list_to_bst;

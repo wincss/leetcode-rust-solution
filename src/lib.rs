@@ -91,6 +91,7 @@ pub mod postorder_traversal;
 pub mod predict_the_winner;
 pub mod range_bitwise_and;
 pub mod recover_tree;
+pub mod relative_sort_array;
 pub mod remove_nth_from_end;
 pub mod reorder_list;
 pub mod repeated_substring_pattern;

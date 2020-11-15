@@ -91,6 +91,7 @@ pub mod permute_unique;
 pub mod postorder_traversal;
 pub mod predict_the_winner;
 pub mod range_bitwise_and;
+pub mod reconstruct_queue;
 pub mod recover_tree;
 pub mod relative_sort_array;
 pub mod remove_kdigits;

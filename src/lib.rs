@@ -42,6 +42,7 @@ pub mod flatten;
 pub mod four_sum;
 pub mod generate_trees;
 pub mod get_least_numbers;
+pub mod get_max_grid_happiness;
 pub mod get_minimum_difference;
 pub mod get_permutation;
 pub mod group_the_people;

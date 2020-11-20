@@ -29,6 +29,7 @@ pub mod count_digit_one;
 pub mod count_substrings;
 pub mod exist;
 pub mod expect_number;
+pub mod find_anagrams;
 pub mod find_integers;
 pub mod find_itinerary;
 pub mod find_ladders;

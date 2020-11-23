@@ -26,6 +26,7 @@ pub mod consecutive_numbers_sum;
 pub mod convert_bst;
 pub mod count_binary_substrings;
 pub mod count_digit_one;
+pub mod count_nodes;
 pub mod count_substrings;
 pub mod exist;
 pub mod expect_number;

@@ -3,7 +3,16 @@ use crate::*;
 use std::cell::RefCell;
 use std::rc::Rc;
 impl Solution {
+    pub fn count_nodes_trivial(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+        if root.is_none() {
+            return 0;
+        }
+        let node = root.as_ref().unwrap().borrow();
+        1 + Self::count_nodes_trivial(node.left.as_ref().map(Rc::clone))
+            + Self::count_nodes_trivial(node.right.as_ref().map(Rc::clone))
+    }
     pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+        // return Self::count_nodes_trivial(root);
         let mut height = 0;
         let mut p = root.as_ref().map(Rc::clone);
         while let Some(v) = p {

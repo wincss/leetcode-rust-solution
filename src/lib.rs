@@ -121,6 +121,7 @@ pub mod sort_array_by_parity_ii;
 pub mod sort_by_bits;
 pub mod sort_colors;
 pub mod sort_list;
+pub mod sort_string;
 pub mod sorted_list_to_bst;
 pub mod sorted_squares;
 pub mod stone_game;

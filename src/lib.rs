@@ -44,6 +44,7 @@ pub mod find_subsequences;
 pub mod find_whether_exists_path;
 pub mod flatten;
 pub mod four_sum;
+pub mod four_sum_count;
 pub mod generate_trees;
 pub mod get_least_numbers;
 pub mod get_max_grid_happiness;

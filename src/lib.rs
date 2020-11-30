@@ -114,6 +114,7 @@ pub mod reverse_list;
 pub mod reverse_string;
 pub mod reverse_words;
 pub mod rob_iii;
+pub mod search_range;
 pub mod shortest_palindrome;
 pub mod single_numbers;
 pub mod smaller_numbers_than_current;

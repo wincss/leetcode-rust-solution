@@ -63,6 +63,7 @@ pub mod is_balanced;
 pub mod is_long_pressed_name;
 pub mod is_match;
 pub mod is_palindrome;
+pub mod is_possible;
 pub mod is_power_of_two;
 pub mod is_same_tree;
 pub mod is_valid;

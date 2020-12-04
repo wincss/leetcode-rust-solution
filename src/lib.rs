@@ -114,6 +114,7 @@ pub mod repeated_substring_pattern;
 pub mod restore_ip_addresses;
 pub mod reverse;
 pub mod reverse_list;
+pub mod reverse_pairs;
 pub mod reverse_string;
 pub mod reverse_words;
 pub mod rob_iii;

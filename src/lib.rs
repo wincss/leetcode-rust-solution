@@ -148,6 +148,7 @@ pub mod top_k_frequent;
 pub mod total_n_queens;
 pub mod two_sum;
 pub mod unique_occurrences;
+pub mod unique_paths;
 pub mod update_board;
 pub mod valid_mountain_array;
 pub mod video_stitching;

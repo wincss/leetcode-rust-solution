@@ -1,51 +1,51 @@
 use crate::*;
 
+fn check_output(input: &str, is_valid: bool) {
+    let output = Solution::split_into_fibonacci(String::from(input));
+    if !is_valid {
+        assert_eq!(output, Vec::<i32>::new());
+        return;
+    }
+    let chained: String = output.iter().map(|v| v.to_string()).collect();
+    assert_eq!(chained, input);
+    let n = output.len();
+    assert!(n > 2);
+    for i in 2..n {
+        assert_eq!(output[i - 2] + output[i - 1], output[i]);
+    }
+}
+
 #[test]
 fn case_1() {
-    assert_eq!(
-        Solution::split_into_fibonacci(String::from("123456579")),
-        vec![123, 456, 579]
-    );
+    check_output("123456579", true);
 }
 
 #[test]
 fn case_2() {
-    assert_eq!(
-        Solution::split_into_fibonacci(String::from("11235813")),
-        vec![1, 1, 2, 3, 5, 8, 13]
-    );
+    check_output("11235813", true);
 }
 
 #[test]
 fn case_3() {
-    assert_eq!(
-        Solution::split_into_fibonacci(String::from("112358130")),
-        Vec::<i32>::new()
-    );
+    check_output("112358130", false);
 }
 
 #[test]
 fn case_4() {
-    assert_eq!(
-        Solution::split_into_fibonacci(String::from("0123")),
-        Vec::<i32>::new()
-    );
+    check_output("0123", false);
 }
 
 #[test]
 fn case_5() {
-    assert_eq!(
-        Solution::split_into_fibonacci(String::from("1012")),
-        Vec::<i32>::new()
-    );
+    check_output("1012", false);
 }
 
 #[test]
 fn case_6() {
-    assert_eq!(
-        Solution::split_into_fibonacci(String::from("5511816597")),
-        Vec::<i32>::new()
-    );
+    check_output("5511816597", false);
 }
 
-// TODO: write test case for 1101111 [110, 1, 111] [11,0,11,11]
+#[test]
+fn case_7() {
+    check_output("1101111", true);
+}

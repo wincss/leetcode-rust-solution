@@ -89,6 +89,7 @@ pub mod merge_trees;
 pub mod merge_two_lists;
 pub mod min_camera_cover;
 pub mod min_depth;
+pub mod min_malware_spread;
 pub mod minimal_steps;
 pub mod minimum_incompatibility;
 pub mod minimum_one_bit_operations;

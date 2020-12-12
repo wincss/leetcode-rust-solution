@@ -23,6 +23,7 @@ pub mod combine;
 pub mod common_chars;
 pub mod connect_two_groups;
 pub mod consecutive_numbers_sum;
+pub mod contains_duplicate;
 pub mod convert_bst;
 pub mod count_binary_substrings;
 pub mod count_digit_one;

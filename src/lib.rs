@@ -154,4 +154,5 @@ pub mod update_board;
 pub mod valid_mountain_array;
 pub mod video_stitching;
 pub mod ways_to_step;
+pub mod wiggle_max_length;
 pub mod word_break;

@@ -8,16 +8,15 @@ impl Solution {
         }
         let mut result = n as i32;
         let mut last2 = nums[0];
-        let mut last1 = nums[1];
         let mut p = 1;
-        while last1 == last2 && p < n {
+        while p < n && nums[p] == last2 {
             result -= 1;
             p += 1;
-            if p == n {
-                return 1;
-            }
-            last1 = nums[p];
         }
+        if p == n {
+            return result;
+        }
+        let mut last1 = nums[p];
         for i in p + 1..n {
             if (nums[i] - last1) * (last1 - last2) >= 0 {
                 result -= 1;

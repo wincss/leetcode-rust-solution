@@ -54,6 +54,7 @@ pub mod get_least_numbers;
 pub mod get_max_grid_happiness;
 pub mod get_minimum_difference;
 pub mod get_permutation;
+pub mod group_anagrams;
 pub mod group_the_people;
 pub mod inorder_traversal;
 pub mod insert_into_bst;

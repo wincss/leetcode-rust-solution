@@ -89,6 +89,7 @@ pub mod max_num_edges_to_remove;
 pub mod max_profit;
 pub mod max_result;
 pub mod maximum_gap;
+pub mod maximum_unique_subarray;
 pub mod merge_k_lists;
 pub mod merge_trees;
 pub mod merge_two_lists;

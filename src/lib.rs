@@ -47,6 +47,7 @@ pub mod find_rotate_steps;
 pub mod find_subsequences;
 pub mod find_the_difference;
 pub mod find_whether_exists_path;
+pub mod first_uniq_char;
 pub mod flatten;
 pub mod four_sum;
 pub mod four_sum_count;

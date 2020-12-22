@@ -87,6 +87,7 @@ pub mod make_connected;
 pub mod matrix_score;
 pub mod max_num_edges_to_remove;
 pub mod max_profit;
+pub mod max_result;
 pub mod maximum_gap;
 pub mod merge_k_lists;
 pub mod merge_trees;

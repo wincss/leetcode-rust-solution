@@ -15,7 +15,7 @@ impl Solution {
                 }
             }
         }
-        println!("{:?}", a);
+        // println!("{:?}", a);
         for j in 1..m {
             let mut ones = 0;
             for i in 0..n {
@@ -26,7 +26,7 @@ impl Solution {
                     a[i][j] = 1 - a[i][j];
                 }
             }
-            println!("{:?}", a);
+            // println!("{:?}", a);
         }
 
         let mut sum = 0;

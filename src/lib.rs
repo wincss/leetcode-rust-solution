@@ -16,6 +16,7 @@ pub mod can_complete_circuit;
 pub mod can_finish;
 pub mod can_partition;
 pub mod can_visit_all_rooms;
+pub mod candy;
 pub mod combination_sum;
 pub mod combination_sum2;
 pub mod combination_sum3;

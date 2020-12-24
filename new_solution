@@ -1,10 +1,19 @@
 #!/bin/bash
 
+FUNNAME=$1
+CONTENT=
 
-DIR="src/$1"
-test -d "src" || exit
-test -e "$DIR" && exit
-mkdir "$DIR"
+if [ -z "$FUNNAME" ]
+then
+    FUNNAME=$(pbpaste | perl -n -e'/pub fn ([^(]+)/ && print $1')
+    CONTENT=$(pbpaste)
+fi
+
+test -z "$FUNNAME" && exit
+
+DIR="src/$FUNNAME"
+test -e "$DIR/mod.rs" && exit
+mkdir -p "$DIR"
 
 cat > "$DIR/mod.rs" <<EOF
 mod solution;
@@ -17,19 +26,30 @@ use crate::*;
 
 #[test]
 fn case_1() {
+    // Solution::$FUNNAME
     todo!();
 }
 EOF
 
-cat > "$DIR/solution.rs" <<EOF
+if [ -z "$CONTENT" ]
+then
+    cat > "$DIR/solution.rs" <<EOF
 use crate::*;
 
 impl Solution {
-    pub fn $1() {
+    pub fn $FUNNAME() {
         todo!();
     }
 }
 EOF
+else
+    cat > "$DIR/solution.rs" <<EOF
+use crate::*;
 
-echo "pub mod $1;" >> src/lib.rs
+${CONTENT/\}/todo!();}
+}
+EOF
+fi
+
+grep "$FUNNAME" src/lib.rs > /dev/null || echo "pub mod $FUNNAME;" >> src/lib.rs
 rustfmt src/lib.rs

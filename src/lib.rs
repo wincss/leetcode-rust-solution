@@ -35,6 +35,7 @@ pub mod distance_limited_paths_exist;
 pub mod exist;
 pub mod expect_number;
 pub mod find_anagrams;
+pub mod find_content_children;
 pub mod find_integers;
 pub mod find_itinerary;
 pub mod find_ladders;

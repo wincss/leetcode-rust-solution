@@ -68,6 +68,7 @@ pub mod intersection;
 pub mod invert_binary_tree;
 pub mod is_anagram;
 pub mod is_balanced;
+pub mod is_isomorphic;
 pub mod is_long_pressed_name;
 pub mod is_match;
 pub mod is_palindrome;

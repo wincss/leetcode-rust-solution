@@ -41,19 +41,18 @@ impl Solution {
             return 0;
         }
         let k = std::cmp::min(k as usize, n / 2);
-        let mut empty = vec![vec![0; k + 1]; n];
-        let mut full = vec![vec![-prices[0]; k + 1]; n];
-        full[0][k] = std::i32::MIN;
+        let mut empty = vec![0; k + 1];
+        let mut full = vec![-prices[0]; k + 1];
+        full[k] = std::i32::MIN;
         let mut result = 0;
         for i in 1..n {
             for j in (0..=k).rev() {
-                empty[i][j] = std::cmp::max(empty[i - 1][j], prices[i] + full[i - 1][j]);
-                if j == k {
-                    full[i][j] = full[i - 1][j];
-                } else {
-                    full[i][j] = std::cmp::max(full[i - 1][j], -prices[i] + empty[i - 1][j + 1]);
+                let new_empty = std::cmp::max(empty[j], prices[i] + full[j]);
+                if j < k {
+                    full[j] = std::cmp::max(full[j], -prices[i] + empty[j + 1]);
                 }
-                result = std::cmp::max(result, empty[i][j]);
+                empty[j] = new_empty;
+                result = std::cmp::max(result, new_empty);
             }
         }
         // println!("prices={:?}", prices);

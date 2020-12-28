@@ -29,3 +29,18 @@ fn case_2_3() {
 fn case_3_1() {
     assert_eq!(Solution::max_profit_with_fee(vec![1, 3, 2, 8, 4, 9], 2), 8);
 }
+
+#[test]
+fn case_4_1() {
+    assert_eq!(Solution::max_profit_iv(2, vec![2, 4, 1]), 2);
+}
+
+#[test]
+fn case_4_2() {
+    assert_eq!(Solution::max_profit_iv(2, vec![3, 2, 6, 5, 0, 3]), 7);
+}
+
+#[test]
+fn case_4_3() {
+    assert_eq!(Solution::max_profit_iv(2, vec![3, 3, 5, 0, 0, 3, 1, 4]), 6);
+}

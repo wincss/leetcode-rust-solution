@@ -104,6 +104,7 @@ pub mod min_camera_cover;
 pub mod min_cost_climbing_stairs;
 pub mod min_depth;
 pub mod min_malware_spread;
+pub mod min_patches;
 pub mod minimal_steps;
 pub mod minimum_incompatibility;
 pub mod minimum_one_bit_operations;

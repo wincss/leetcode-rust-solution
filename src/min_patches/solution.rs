@@ -5,13 +5,13 @@ impl Solution {
         let mut nums = nums;
         nums.sort();
         let l = nums.len();
-        let mut cover = 1;
+        let mut cover: i64 = 1;
         let mut to_add = 0;
         let mut idx = 0;
 
-        while cover <= n {
-            if idx < l && nums[idx] <= cover {
-                cover += nums[idx];
+        while cover <= n as i64 {
+            if idx < l && nums[idx] as i64 <= cover {
+                cover += nums[idx] as i64;
                 idx += 1;
             } else {
                 cover *= 2;

@@ -39,6 +39,7 @@ pub mod find_content_children;
 pub mod find_integers;
 pub mod find_itinerary;
 pub mod find_ladders;
+pub mod find_maximum_xor;
 pub mod find_median_sorted_arrays;
 pub mod find_min_arrow_shots;
 pub mod find_min_fibonacci_numbers;

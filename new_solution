@@ -13,6 +13,7 @@ test -z "$FUNNAME" && exit
 
 DIR="src/$FUNNAME"
 test -e "$DIR/mod.rs" && exit
+echo "Creating code snippet for ${FUNNAME}..."
 mkdir -p "$DIR"
 
 cat > "$DIR/mod.rs" <<EOF

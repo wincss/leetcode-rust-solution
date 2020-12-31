@@ -32,6 +32,7 @@ pub mod count_nodes;
 pub mod count_primes;
 pub mod count_substrings;
 pub mod distance_limited_paths_exist;
+pub mod erase_overlap_intervals;
 pub mod exist;
 pub mod expect_number;
 pub mod find_anagrams;

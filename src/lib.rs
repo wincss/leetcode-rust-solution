@@ -124,6 +124,7 @@ pub mod num_jewels_in_stones;
 pub mod num_smaller_by_frequency;
 pub mod odd_even_list;
 pub mod palindrome_pairs;
+pub mod partition;
 pub mod partition_labels;
 pub mod path_sum;
 pub mod permute_unique;

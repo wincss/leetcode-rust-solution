@@ -52,5 +52,5 @@ ${CONTENT/\}/todo!();}
 EOF
 fi
 
-grep "$FUNNAME" src/lib.rs > /dev/null || echo "pub mod $FUNNAME;" >> src/lib.rs
+grep "\<$FUNNAME\>" src/lib.rs > /dev/null || echo "pub mod $FUNNAME;" >> src/lib.rs
 rustfmt src/lib.rs

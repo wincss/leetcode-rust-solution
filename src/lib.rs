@@ -36,6 +36,7 @@ pub mod distance_limited_paths_exist;
 pub mod erase_overlap_intervals;
 pub mod exist;
 pub mod expect_number;
+pub mod fib;
 pub mod find_anagrams;
 pub mod find_content_children;
 pub mod find_integers;

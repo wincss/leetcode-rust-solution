@@ -11,6 +11,7 @@ pub mod average_of_levels;
 pub mod backspace_compare;
 pub mod binary_tree_paths;
 pub mod build_tree;
+pub mod calc_equation;
 pub mod calculate;
 pub mod can_complete_circuit;
 pub mod can_finish;

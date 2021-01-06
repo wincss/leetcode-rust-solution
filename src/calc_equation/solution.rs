@@ -8,12 +8,15 @@ impl Solution {
         values: Vec<f64>,
         queries: Vec<Vec<String>>,
     ) -> Vec<f64> {
-        fn find<'a>(
-            x: &'a String,
-            scale: &mut HashMap<&'a String, f64>,
-            parent: &mut HashMap<&'a String, &'a String>,
-            size: &mut HashMap<&'a String, usize>,
-        ) -> (&'a String, f64) {
+        fn find<'a, T>(
+            x: &'a T,
+            scale: &mut HashMap<&'a T, f64>,
+            parent: &mut HashMap<&'a T, &'a T>,
+            size: &mut HashMap<&'a T, usize>,
+        ) -> (&'a T, f64)
+        where
+            T: std::cmp::Eq + std::hash::Hash,
+        {
             let f = parent.entry(x).or_insert(x);
             size.entry(x).or_insert(1);
             scale.entry(x).or_insert(1.0_f64);
@@ -27,14 +30,16 @@ impl Solution {
                 (p, s)
             }
         }
-        fn union<'a>(
-            x: &'a String,
-            y: &'a String,
+        fn union<'a, T>(
+            x: &'a T,
+            y: &'a T,
             s: f64,
-            scale: &mut HashMap<&'a String, f64>,
-            parent: &mut HashMap<&'a String, &'a String>,
-            size: &mut HashMap<&'a String, usize>,
-        ) {
+            scale: &mut HashMap<&'a T, f64>,
+            parent: &mut HashMap<&'a T, &'a T>,
+            size: &mut HashMap<&'a T, usize>,
+        ) where
+            T: std::cmp::Eq + std::hash::Hash,
+        {
             let (x, s1) = find(x, scale, parent, size);
             let (y, s2) = find(y, scale, parent, size);
             if size[&x] > size[&y] {

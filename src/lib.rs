@@ -39,6 +39,7 @@ pub mod exist;
 pub mod expect_number;
 pub mod fib;
 pub mod find_anagrams;
+pub mod find_circle_num;
 pub mod find_content_children;
 pub mod find_integers;
 pub mod find_itinerary;

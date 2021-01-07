@@ -151,6 +151,7 @@ pub mod reverse_pairs;
 pub mod reverse_string;
 pub mod reverse_words;
 pub mod rob_iii;
+pub mod rotate;
 pub mod search_range;
 pub mod shortest_palindrome;
 pub mod single_numbers;

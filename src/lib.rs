@@ -173,6 +173,7 @@ pub mod subsets;
 pub mod sum_numbers;
 pub mod sum_of_distances_in_tree;
 pub mod sum_of_left_leaves;
+pub mod summary_ranges;
 pub mod swap_pairs;
 pub mod title_to_number;
 pub mod top_k_frequent;

@@ -35,6 +35,10 @@ impl Solution {
         empty
     }
 
+    pub fn max_profit_iii(prices: Vec<i32>) -> i32 {
+        Self::max_profit_iv(2, prices)
+    }
+
     pub fn max_profit_iv(k: i32, prices: Vec<i32>) -> i32 {
         let n = prices.len();
         if n == 0 {

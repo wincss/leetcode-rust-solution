@@ -157,6 +157,7 @@ pub mod search_range;
 pub mod shortest_palindrome;
 pub mod single_numbers;
 pub mod smaller_numbers_than_current;
+pub mod smallest_string_with_swaps;
 pub mod solve;
 pub mod solve_n_queens;
 pub mod solve_sudoku;

@@ -100,6 +100,7 @@ pub mod make_connected;
 pub mod matrix_score;
 pub mod max_height;
 pub mod max_num_edges_to_remove;
+pub mod max_number;
 pub mod max_profit;
 pub mod max_result;
 pub mod max_sliding_window;

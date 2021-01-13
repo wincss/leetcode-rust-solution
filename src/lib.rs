@@ -137,6 +137,7 @@ pub mod path_sum;
 pub mod permute_unique;
 pub mod postorder_traversal;
 pub mod predict_the_winner;
+pub mod prefixes_div_by5;
 pub mod range_bitwise_and;
 pub mod reconstruct_queue;
 pub mod recover_tree;

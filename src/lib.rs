@@ -116,6 +116,7 @@ pub mod merge_trees;
 pub mod merge_two_lists;
 pub mod min_camera_cover;
 pub mod min_cost_climbing_stairs;
+pub mod min_cost_connect_points;
 pub mod min_depth;
 pub mod min_malware_spread;
 pub mod min_patches;

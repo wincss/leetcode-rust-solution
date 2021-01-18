@@ -4,6 +4,7 @@ pub use common::ListNode;
 pub use common::TreeNode;
 
 pub struct Solution;
+pub mod accounts_merge;
 pub mod add_binary;
 pub mod add_two_numbers;
 pub mod all_cells_dist_order;

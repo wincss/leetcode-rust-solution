@@ -110,6 +110,7 @@ pub mod max_sliding_window;
 pub mod maximal_rectangle;
 pub mod maximize_xor;
 pub mod maximum_gap;
+pub mod maximum_product;
 pub mod maximum_unique_subarray;
 pub mod merge_k_lists;
 pub mod merge_trees;

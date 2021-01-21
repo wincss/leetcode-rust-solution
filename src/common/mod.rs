@@ -5,6 +5,7 @@ mod linked_list;
 #[cfg(test)]
 mod linked_list_tests;
 
+pub mod algorithms;
 pub mod utils;
 
 pub use binary_tree::TreeNode;

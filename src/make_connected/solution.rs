@@ -11,13 +11,10 @@ impl Solution {
         let mut free = 0;
         let mut area = n;
         for edge in connections {
-            let v1 = find(&edge[0], &mut parent, &mut size);
-            let v2 = find(&edge[1], &mut parent, &mut size);
-            if v1 == v2 {
-                free += 1;
-            } else {
-                union(&v1, &v2, &mut parent, &mut size);
+            if union(&edge[0], &edge[1], &mut parent, &mut size) {
                 area -= 1;
+            } else {
+                free += 1;
             }
         }
         if area - 1 <= free {

@@ -49,6 +49,7 @@ pub mod find_critical_and_pseudo_critical_edges;
 pub mod find_integers;
 pub mod find_itinerary;
 pub mod find_ladders;
+pub mod find_length_of_lcis;
 pub mod find_maximum_xor;
 pub mod find_median_sorted_arrays;
 pub mod find_min_arrow_shots;

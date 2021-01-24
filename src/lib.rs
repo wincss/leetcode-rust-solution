@@ -149,6 +149,7 @@ pub mod range_bitwise_and;
 pub mod reconstruct_queue;
 pub mod recover_tree;
 pub mod reformat_number;
+pub mod regions_by_slashes;
 pub mod relative_sort_array;
 pub mod remove_duplicate_letters;
 pub mod remove_kdigits;

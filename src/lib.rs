@@ -143,6 +143,7 @@ pub mod partition;
 pub mod partition_labels;
 pub mod path_sum;
 pub mod permute_unique;
+pub mod pivot_index;
 pub mod postorder_traversal;
 pub mod predict_the_winner;
 pub mod prefixes_div_by5;

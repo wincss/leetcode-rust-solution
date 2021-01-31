@@ -137,6 +137,7 @@ pub mod next_permutation;
 pub mod num_dup_digits_at_most_n;
 pub mod num_equiv_domino_pairs;
 pub mod num_jewels_in_stones;
+pub mod num_similar_groups;
 pub mod num_smaller_by_frequency;
 pub mod odd_even_list;
 pub mod palindrome_pairs;

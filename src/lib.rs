@@ -41,6 +41,7 @@ pub mod duplicate_zeros;
 pub mod erase_overlap_intervals;
 pub mod exist;
 pub mod expect_number;
+pub mod fair_candy_swap;
 pub mod fib;
 pub mod find_anagrams;
 pub mod find_circle_num;

@@ -21,6 +21,7 @@ pub mod can_partition;
 pub mod can_place_flowers;
 pub mod can_visit_all_rooms;
 pub mod candy;
+pub mod character_replacement;
 pub mod check_straight_line;
 pub mod combination_sum;
 pub mod combination_sum2;

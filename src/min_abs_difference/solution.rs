@@ -16,34 +16,35 @@ impl Solution {
         let left = n / 2;
         let right = n - left;
 
-        let mut leftsum = vec![0; 1 << left];
+        let mut left_sum = vec![0; 1 << left];
         for i in 1..(1 << left) {
             let key = i & (i - 1);
-            leftsum[i] = leftsum[key] + nums[bitmap[&(i - key)]];
+            left_sum[i] = left_sum[key] + nums[bitmap[&(i - key)]];
         }
-        leftsum.sort();
-        let num_leftsum = leftsum.len();
+        left_sum.sort();
+        let mut right_sum = vec![0; 1 << right];
+        for i in 1..(1 << right) {
+            let key = i & (i - 1);
+            right_sum[i] = right_sum[key] + nums[left + bitmap[&(i - key)]];
+        }
+        right_sum.sort();
 
-        let mut rightsum = vec![0; 1 << right];
-        let mut mindiff = std::i32::MAX;
-        for i in 0..(1 << right) {
-            let v = if i > 0 {
-                let key = i & (i - 1);
-                rightsum[key] + nums[left + bitmap[&(i - key)]]
+        let mut left_idx = 0;
+        let mut right_idx = right_sum.len() - 1;
+        let mut min_diff = std::i32::MAX;
+        while left_idx < left_sum.len() {
+            let total = left_sum[left_idx] + right_sum[right_idx];
+            min_diff = std::cmp::min(min_diff, (total - goal).abs());
+
+            if total > goal {
+                if right_idx == 0 {
+                    break;
+                }
+                right_idx -= 1;
             } else {
-                0
-            };
-            rightsum[i] = v;
-
-            let pos = leftsum.binary_search(&(goal - v)).unwrap_or_else(|x| x);
-            if pos < num_leftsum {
-                mindiff = std::cmp::min(mindiff, (goal - v - leftsum[pos]).abs());
-            }
-            if pos > 0 {
-                mindiff = std::cmp::min(mindiff, (goal - v - leftsum[pos - 1]).abs());
+                left_idx += 1;
             }
         }
-        // println!("{:?} {:?}", leftsum, rightsum);
-        mindiff
+        min_diff
     }
 }

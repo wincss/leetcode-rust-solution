@@ -125,6 +125,7 @@ pub mod median_sliding_window;
 pub mod merge_k_lists;
 pub mod merge_trees;
 pub mod merge_two_lists;
+pub mod min_abs_difference;
 pub mod min_camera_cover;
 pub mod min_cost_climbing_stairs;
 pub mod min_cost_connect_points;

@@ -1,6 +1,6 @@
 use crate::*;
 
-use std::collections::HashSet;
+use std::collections::HashMap;
 impl Solution {
     pub fn min_abs_difference(nums: Vec<i32>, goal: i32) -> i32 {
         let n = nums.len();
@@ -9,41 +9,41 @@ impl Solution {
         }
         let mut nums = nums;
         nums.sort();
+        let mut bitmap = HashMap::new();
+        for i in 0_usize..32 {
+            bitmap.insert(1 << i, i);
+        }
         let left = n / 2;
         let right = n - left;
-        let mut leftsum = HashSet::new();
-        for i in 0..(1 << left) {
-            let mut s = 0;
-            for j in 0..left {
-                if i & (1 << j) > 0 {
-                    s += nums[j];
-                }
-            }
-            leftsum.insert(s);
+
+        let mut leftsum = vec![0; 1 << left];
+        for i in 1..(1 << left) {
+            let key = i & (i - 1);
+            leftsum[i] = leftsum[key] + nums[bitmap[&(i - key)]];
         }
-        let mut leftsum: Vec<i32> = leftsum.into_iter().collect();
         leftsum.sort();
-        let lsn = leftsum.len();
+        let num_leftsum = leftsum.len();
+
+        let mut rightsum = vec![0; 1 << right];
         let mut mindiff = std::i32::MAX;
         for i in 0..(1 << right) {
-            let mut s = 0;
-            for j in 0..right {
-                if i & (1 << j) > 0 {
-                    s += nums[left + j];
-                }
-            }
-            let mut pos = leftsum.binary_search(&(goal - s)).unwrap_or_else(|x| x);
-            let pos2 = if pos == lsn {
-                pos = lsn - 1;
-                lsn - 1
-            } else if pos > 0 {
-                pos - 1
+            let v = if i > 0 {
+                let key = i & (i - 1);
+                rightsum[key] + nums[left + bitmap[&(i - key)]]
             } else {
                 0
             };
-            mindiff = std::cmp::min(mindiff, (goal - s - leftsum[pos]).abs());
-            mindiff = std::cmp::min(mindiff, (goal - s - leftsum[pos2]).abs());
+            rightsum[i] = v;
+
+            let pos = leftsum.binary_search(&(goal - v)).unwrap_or_else(|x| x);
+            if pos < num_leftsum {
+                mindiff = std::cmp::min(mindiff, (goal - v - leftsum[pos]).abs());
+            }
+            if pos > 0 {
+                mindiff = std::cmp::min(mindiff, (goal - v - leftsum[pos - 1]).abs());
+            }
         }
+        // println!("{:?} {:?}", leftsum, rightsum);
         mindiff
     }
 }

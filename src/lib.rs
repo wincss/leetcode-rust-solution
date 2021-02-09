@@ -196,6 +196,7 @@ pub mod sorted_list_to_bst;
 pub mod sorted_squares;
 pub mod split_into_fibonacci;
 pub mod stone_game;
+pub mod subarrays_with_k_distinct;
 pub mod subsets;
 pub mod sum_numbers;
 pub mod sum_of_distances_in_tree;

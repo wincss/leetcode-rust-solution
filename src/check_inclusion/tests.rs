@@ -15,3 +15,11 @@ fn case_2() {
         String::from("eidboaoo")
     ));
 }
+
+#[test]
+fn case_3() {
+    assert!(Solution::check_inclusion(
+        String::from("abcd"),
+        String::from("dcba")
+    ));
+}

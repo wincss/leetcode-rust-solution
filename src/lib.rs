@@ -100,6 +100,7 @@ pub mod judge_circle;
 pub mod judge_point24;
 pub mod k_closest;
 pub mod knight_probability;
+pub mod kth_largest;
 pub mod ladder_length;
 pub mod large_group_positions;
 pub mod last_stone_weight;

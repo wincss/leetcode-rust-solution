@@ -137,6 +137,7 @@ pub mod min_cost_connect_points;
 pub mod min_depth;
 pub mod min_malware_spread;
 pub mod min_patches;
+pub mod min_swaps_couples;
 pub mod minimal_steps;
 pub mod minimum_effort_path;
 pub mod minimum_incompatibility;

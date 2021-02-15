@@ -9,6 +9,7 @@ pub mod add_binary;
 pub mod add_to_array_form;
 pub mod add_two_numbers;
 pub mod all_cells_dist_order;
+pub mod array_pair_sum;
 pub mod average_of_levels;
 pub mod backspace_compare;
 pub mod binary_tree_paths;

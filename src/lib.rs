@@ -114,6 +114,7 @@ pub mod letter_combinations;
 pub mod level_order_bottom;
 pub mod longest_awesome;
 pub mod make_connected;
+pub mod matrix_reshape;
 pub mod matrix_score;
 pub mod max_height;
 pub mod max_num_edges_to_remove;

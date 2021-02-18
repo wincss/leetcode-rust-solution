@@ -113,6 +113,7 @@ pub mod length_of_longest_substring;
 pub mod letter_combinations;
 pub mod level_order_bottom;
 pub mod longest_awesome;
+pub mod longest_ones;
 pub mod make_connected;
 pub mod matrix_reshape;
 pub mod matrix_score;

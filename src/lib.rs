@@ -68,6 +68,7 @@ pub mod find_order;
 pub mod find_redundant_connection;
 pub mod find_redundant_directed_connection;
 pub mod find_rotate_steps;
+pub mod find_shortest_sub_array;
 pub mod find_subsequences;
 pub mod find_the_difference;
 pub mod find_whether_exists_path;

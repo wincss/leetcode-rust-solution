@@ -115,6 +115,7 @@ pub mod letter_combinations;
 pub mod level_order_bottom;
 pub mod longest_awesome;
 pub mod longest_ones;
+pub mod longest_subarray;
 pub mod make_connected;
 pub mod matrix_reshape;
 pub mod matrix_score;

@@ -17,3 +17,8 @@ fn case_3() {
         3
     );
 }
+
+#[test]
+fn case_4() {
+    assert_eq!(Solution::longest_subarray(vec![10, 1, 2, 10], 1), 2);
+}

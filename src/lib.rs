@@ -127,6 +127,7 @@ pub mod max_num_edges_to_remove;
 pub mod max_number;
 pub mod max_profit;
 pub mod max_result;
+pub mod max_satisfied;
 pub mod max_score;
 pub mod max_sliding_window;
 pub mod max_turbulence_size;

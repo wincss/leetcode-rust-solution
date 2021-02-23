@@ -74,6 +74,7 @@ pub mod find_the_difference;
 pub mod find_whether_exists_path;
 pub mod first_uniq_char;
 pub mod flatten;
+pub mod flip_and_invert_image;
 pub mod four_sum;
 pub mod four_sum_count;
 pub mod generate;

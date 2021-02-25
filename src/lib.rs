@@ -225,6 +225,7 @@ pub mod swim_in_water;
 pub mod title_to_number;
 pub mod top_k_frequent;
 pub mod total_n_queens;
+pub mod transpose;
 pub mod two_sum;
 pub mod unique_occurrences;
 pub mod unique_paths;

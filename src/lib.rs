@@ -121,6 +121,7 @@ pub mod longest_common_subsequence;
 pub mod longest_ones;
 pub mod longest_palindrome_subseq;
 pub mod longest_subarray;
+pub mod longest_substring;
 pub mod make_connected;
 pub mod matrix_reshape;
 pub mod matrix_score;

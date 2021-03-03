@@ -36,6 +36,7 @@ pub mod consecutive_numbers_sum;
 pub mod contains_duplicate;
 pub mod convert_bst;
 pub mod count_binary_substrings;
+pub mod count_bits;
 pub mod count_digit_one;
 pub mod count_nodes;
 pub mod count_primes;

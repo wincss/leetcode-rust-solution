@@ -165,6 +165,7 @@ pub mod missing_two;
 pub mod monotone_increasing_digits;
 pub mod move_zeroes;
 pub mod multiply;
+pub mod my_queue;
 pub mod next_permutation;
 pub mod num_array;
 pub mod num_dup_digits_at_most_n;

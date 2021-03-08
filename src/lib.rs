@@ -193,6 +193,7 @@ pub mod reformat_number;
 pub mod regions_by_slashes;
 pub mod relative_sort_array;
 pub mod remove_duplicate_letters;
+pub mod remove_duplicates;
 pub mod remove_kdigits;
 pub mod remove_nth_from_end;
 pub mod remove_stones;

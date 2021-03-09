@@ -34,3 +34,18 @@ fn case_6() {
 fn case_7() {
     assert_eq!(Solution::calculate("(3+2)*(1+2)".to_string()), 15);
 }
+
+#[test]
+fn case_8() {
+    assert_eq!(Solution::calculate("-2+1".to_string()), -1);
+}
+
+#[test]
+fn case_9() {
+    assert_eq!(Solution::calculate("- (3 + (4 + 5))".to_string()), -12);
+}
+
+#[test]
+fn case_10() {
+    assert_eq!(Solution::calculate("+ (3 + (4 + 5))".to_string()), 12);
+}

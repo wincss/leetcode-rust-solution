@@ -150,7 +150,8 @@ impl Solution {
             symbol: "+",
             operation: Box::new(|st: &mut Vec<i32>| {
                 let a = st.pop().unwrap();
-                let b = st.pop().unwrap();
+                // add can be a unary operator
+                let b = st.pop().unwrap_or(0);
                 st.push(b + a);
             }),
             precedence: 1,
@@ -159,7 +160,8 @@ impl Solution {
             symbol: "-",
             operation: Box::new(|st: &mut Vec<i32>| {
                 let a = st.pop().unwrap();
-                let b = st.pop().unwrap();
+                // minus can be a unary operator
+                let b = st.pop().unwrap_or(0);
                 st.push(b - a);
             }),
             precedence: 1,

@@ -179,6 +179,7 @@ pub mod num_similar_groups;
 pub mod num_smaller_by_frequency;
 pub mod odd_even_list;
 pub mod palindrome_pairs;
+pub mod palindrome_partition;
 pub mod partition;
 pub mod partition_labels;
 pub mod path_sum;

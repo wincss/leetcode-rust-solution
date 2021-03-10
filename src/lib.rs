@@ -151,6 +151,7 @@ pub mod min_abs_difference;
 pub mod min_camera_cover;
 pub mod min_cost_climbing_stairs;
 pub mod min_cost_connect_points;
+pub mod min_cut;
 pub mod min_depth;
 pub mod min_k_bit_flips;
 pub mod min_malware_spread;

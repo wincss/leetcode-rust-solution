@@ -106,6 +106,7 @@ pub mod is_power_of_two;
 pub mod is_same_tree;
 pub mod is_toeplitz_matrix;
 pub mod is_valid;
+pub mod is_valid_serialization;
 pub mod island_perimeter;
 pub mod judge_circle;
 pub mod judge_point24;

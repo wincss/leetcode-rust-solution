@@ -81,6 +81,7 @@ pub mod flip_and_invert_image;
 pub mod four_sum;
 pub mod four_sum_count;
 pub mod generate;
+pub mod generate_matrix;
 pub mod generate_trees;
 pub mod get_least_numbers;
 pub mod get_max_grid_happiness;

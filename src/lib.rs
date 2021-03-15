@@ -226,6 +226,7 @@ pub mod sort_list;
 pub mod sort_string;
 pub mod sorted_list_to_bst;
 pub mod sorted_squares;
+pub mod spiral_order;
 pub mod split_into_fibonacci;
 pub mod stone_game;
 pub mod subarrays_with_k_distinct;

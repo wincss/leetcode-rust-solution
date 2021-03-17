@@ -173,6 +173,7 @@ pub mod my_queue;
 pub mod next_greater_elements;
 pub mod next_permutation;
 pub mod num_array;
+pub mod num_distinct;
 pub mod num_dup_digits_at_most_n;
 pub mod num_equiv_domino_pairs;
 pub mod num_jewels_in_stones;

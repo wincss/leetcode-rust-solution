@@ -51,6 +51,7 @@ pub mod expect_number;
 pub mod fair_candy_swap;
 pub mod fib;
 pub mod find_anagrams;
+pub mod find_center;
 pub mod find_circle_num;
 pub mod find_content_children;
 pub mod find_critical_and_pseudo_critical_edges;

@@ -20,28 +20,27 @@ impl Solution {
     }
 
     pub fn delete_duplicates_ii(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-        let mut root = ListNode::new(0);
-        root.next = head;
-        let mut root = Box::new(root);
-        let mut confirmed_tail = &mut root;
-        while let Some(mut n1) = confirmed_tail.next.take() {
-            let mut need_remove = false;
-            while let Some(n2) = n1.next.take() {
-                if n1.val == n2.val {
-                    need_remove = true;
-                    n1.next = n2.next;
-                } else {
-                    n1.next.replace(n2);
-                    break;
+        let mut root = Some(Box::new(ListNode::new(0)));
+        let mut tail = &mut root;
+        let mut last: Option<Box<ListNode>> = None;
+        let mut head = head;
+
+        let mut need_remove = false;
+        while let Some(mut node) = head.take() {
+            head = node.next.take();
+            if let Some(last_node) = last.as_ref() {
+                let new_need_remove = last_node.val == node.val;
+                if !new_need_remove && !need_remove {
+                    tail.as_mut().unwrap().next = last.take();
+                    tail = &mut tail.as_mut().unwrap().next;
                 }
+                need_remove = new_need_remove;
             }
-            if need_remove {
-                confirmed_tail.next = n1.next;
-            } else {
-                confirmed_tail.next.replace(n1);
-                confirmed_tail = confirmed_tail.next.as_mut().unwrap();
-            }
+            last.replace(node);
         }
-        root.next
+        if !need_remove {
+            tail.as_mut().unwrap().next = last;
+        }
+        root.unwrap().next
     }
 }

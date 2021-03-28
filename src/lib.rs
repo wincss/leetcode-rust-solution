@@ -213,6 +213,7 @@ pub mod repeated_substring_pattern;
 pub mod restore_ip_addresses;
 pub mod reverse;
 pub mod reverse_between;
+pub mod reverse_bits;
 pub mod reverse_list;
 pub mod reverse_pairs;
 pub mod reverse_print;

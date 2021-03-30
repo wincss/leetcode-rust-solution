@@ -15,6 +15,7 @@ pub mod backspace_compare;
 pub mod basic_calculator_iv;
 pub mod beauty_sum;
 pub mod binary_tree_paths;
+pub mod bst_iterator;
 pub mod build_tree;
 pub mod calc_equation;
 pub mod calculate;

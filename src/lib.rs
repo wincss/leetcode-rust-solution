@@ -29,6 +29,7 @@ pub mod character_replacement;
 pub mod check_inclusion;
 pub mod check_possibility;
 pub mod check_straight_line;
+pub mod clumsy;
 pub mod combination_sum;
 pub mod combination_sum2;
 pub mod combination_sum3;

@@ -139,6 +139,7 @@ pub mod make_connected;
 pub mod matrix_reshape;
 pub mod matrix_score;
 pub mod max_envelopes;
+pub mod max_freq;
 pub mod max_height;
 pub mod max_num_edges_to_remove;
 pub mod max_number;

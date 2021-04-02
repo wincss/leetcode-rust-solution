@@ -138,6 +138,7 @@ pub mod longest_palindrome_subseq;
 pub mod longest_subarray;
 pub mod longest_substring;
 pub mod make_connected;
+pub mod make_good;
 pub mod matrix_reshape;
 pub mod matrix_score;
 pub mod max_envelopes;

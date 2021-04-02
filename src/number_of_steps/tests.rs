@@ -14,3 +14,8 @@ fn case_2() {
 fn case_3() {
     assert_eq!(Solution::number_of_steps(123), 12);
 }
+
+#[test]
+fn case_4() {
+    assert_eq!(Solution::number_of_steps(0), 0);
+}

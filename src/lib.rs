@@ -191,6 +191,7 @@ pub mod num_jewels_in_stones;
 pub mod num_matrix;
 pub mod num_similar_groups;
 pub mod num_smaller_by_frequency;
+pub mod number_of_steps;
 pub mod odd_even_list;
 pub mod palindrome_pairs;
 pub mod palindrome_partition;

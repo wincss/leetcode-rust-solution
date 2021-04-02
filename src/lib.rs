@@ -255,6 +255,7 @@ pub mod subsets_with_dup;
 pub mod sum_numbers;
 pub mod sum_of_distances_in_tree;
 pub mod sum_of_left_leaves;
+pub mod sum_of_unique;
 pub mod summary_ranges;
 pub mod swap_pairs;
 pub mod swim_in_water;

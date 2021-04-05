@@ -158,6 +158,7 @@ pub mod maximum_gap;
 pub mod maximum_product;
 pub mod maximum_unique_subarray;
 pub mod median_sliding_window;
+pub mod merge;
 pub mod merge_k_lists;
 pub mod merge_trees;
 pub mod merge_two_lists;

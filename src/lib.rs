@@ -51,6 +51,7 @@ pub mod distance_limited_paths_exist;
 pub mod duplicate_zeros;
 pub mod equal_substring;
 pub mod erase_overlap_intervals;
+pub mod escape_maze;
 pub mod eval_rpn;
 pub mod exist;
 pub mod expect_number;

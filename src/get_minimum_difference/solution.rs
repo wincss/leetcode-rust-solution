@@ -3,6 +3,7 @@ use crate::*;
 use std::cell::RefCell;
 use std::rc::Rc;
 impl Solution {
+    // See also: min_diff_in_bst
     pub fn get_minimum_difference(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         fn inorder_traversal(
             root: Option<Rc<RefCell<TreeNode>>>,
@@ -24,8 +25,5 @@ impl Solution {
         let mut result = std::i32::MAX;
         inorder_traversal(root, &mut last_num, &mut result);
         result
-    }
-    pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        Self::get_minimum_difference(root)
     }
 }

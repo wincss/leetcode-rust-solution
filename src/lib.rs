@@ -170,6 +170,7 @@ pub mod min_cost_climbing_stairs;
 pub mod min_cost_connect_points;
 pub mod min_cut;
 pub mod min_depth;
+pub mod min_diff_in_bst;
 pub mod min_k_bit_flips;
 pub mod min_malware_spread;
 pub mod min_patches;

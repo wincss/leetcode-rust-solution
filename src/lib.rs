@@ -232,6 +232,7 @@ pub mod reverse_pairs;
 pub mod reverse_print;
 pub mod reverse_string;
 pub mod reverse_words;
+pub mod rob_ii;
 pub mod rob_iii;
 pub mod rotate;
 pub mod rotate_right;

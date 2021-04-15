@@ -272,6 +272,7 @@ pub mod top_k_frequent;
 pub mod total_n_queens;
 pub mod transpose;
 pub mod trap;
+pub mod trie;
 pub mod two_sum;
 pub mod unique_occurrences;
 pub mod unique_paths;

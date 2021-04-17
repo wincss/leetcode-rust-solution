@@ -1,7 +1,22 @@
 use crate::*;
 
 impl Solution {
-    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+    pub fn remove_duplicates_26(nums: &mut Vec<i32>) -> i32 {
+        let mut last = None;
+        let mut idx = 0;
+        let n = nums.len();
+        for i in 0..n {
+            if last == Some(nums[i]) {
+                continue;
+            }
+            nums[idx] = nums[i];
+            idx += 1;
+            last = Some(nums[i]);
+        }
+        idx as i32
+    }
+
+    pub fn remove_duplicates_80(nums: &mut Vec<i32>) -> i32 {
         let mut last = None;
         let mut last_count = 0;
         let mut idx = 0;
@@ -23,7 +38,7 @@ impl Solution {
     }
 
     // remove_duplicates in origin problem
-    pub fn remove_duplicates_string(s: String) -> String {
+    pub fn remove_duplicates_1047(s: String) -> String {
         let mut st = vec![];
         for c in s.chars() {
             if *st.last().unwrap_or(&'*') == c {

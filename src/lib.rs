@@ -263,6 +263,7 @@ pub mod sorted_squares;
 pub mod spiral_order;
 pub mod split_into_fibonacci;
 pub mod stone_game;
+pub mod str_str;
 pub mod subarrays_with_k_distinct;
 pub mod subsets;
 pub mod subsets_with_dup;

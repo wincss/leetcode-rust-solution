@@ -155,6 +155,7 @@ pub mod max_result;
 pub mod max_satisfied;
 pub mod max_score;
 pub mod max_sliding_window;
+pub mod max_sum_submatrix;
 pub mod max_turbulence_size;
 pub mod maximal_rectangle;
 pub mod maximize_xor;

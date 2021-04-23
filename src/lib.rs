@@ -34,6 +34,7 @@ pub mod clumsy;
 pub mod combination_sum;
 pub mod combination_sum2;
 pub mod combination_sum3;
+pub mod combination_sum4;
 pub mod combine;
 pub mod common_chars;
 pub mod connect_two_groups;

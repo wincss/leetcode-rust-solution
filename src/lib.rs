@@ -129,6 +129,7 @@ pub mod knight_probability;
 pub mod kth_largest;
 pub mod ladder_length;
 pub mod large_group_positions;
+pub mod largest_divisible_subset;
 pub mod largest_number;
 pub mod last_stone_weight;
 pub mod least_interval;

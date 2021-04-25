@@ -103,6 +103,7 @@ pub mod get_row;
 pub mod group_anagrams;
 pub mod group_the_people;
 pub mod hamming_weight;
+pub mod increasing_bst;
 pub mod inorder_traversal;
 pub mod insert_into_bst;
 pub mod insertion_sort_list;

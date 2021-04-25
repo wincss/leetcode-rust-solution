@@ -249,6 +249,7 @@ pub mod rotate_right;
 pub mod search_matrix;
 pub mod search_range;
 pub mod set_zeroes;
+pub mod ship_within_days;
 pub mod shortest_palindrome;
 pub mod single_numbers;
 pub mod smaller_numbers_than_current;

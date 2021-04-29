@@ -21,6 +21,7 @@ pub mod build_tree;
 pub mod calc_equation;
 pub mod calculate;
 pub mod can_complete_circuit;
+pub mod can_cross;
 pub mod can_finish;
 pub mod can_partition;
 pub mod can_place_flowers;

@@ -254,6 +254,7 @@ pub mod search_range;
 pub mod set_zeroes;
 pub mod ship_within_days;
 pub mod shortest_palindrome;
+pub mod single_number;
 pub mod single_numbers;
 pub mod smaller_numbers_than_current;
 pub mod smallest_string_with_swaps;

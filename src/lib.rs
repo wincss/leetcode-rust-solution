@@ -136,6 +136,7 @@ pub mod large_group_positions;
 pub mod largest_divisible_subset;
 pub mod largest_number;
 pub mod last_stone_weight;
+pub mod least_bricks;
 pub mod least_interval;
 pub mod length_of_longest_substring;
 pub mod letter_combinations;

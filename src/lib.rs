@@ -175,6 +175,7 @@ pub mod merge_trees;
 pub mod merge_two_lists;
 pub mod min_abs_difference;
 pub mod min_camera_cover;
+pub mod min_cost;
 pub mod min_cost_climbing_stairs;
 pub mod min_cost_connect_points;
 pub mod min_cut;

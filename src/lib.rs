@@ -194,6 +194,7 @@ pub mod minimum_incompatibility;
 pub mod minimum_one_bit_operations;
 pub mod minimum_operations;
 pub mod minimum_size;
+pub mod minimum_time_required;
 pub mod missing_two;
 pub mod monotone_increasing_digits;
 pub mod move_zeroes;

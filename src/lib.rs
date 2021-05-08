@@ -181,6 +181,7 @@ pub mod min_cost;
 pub mod min_cost_climbing_stairs;
 pub mod min_cost_connect_points;
 pub mod min_cut;
+pub mod min_days;
 pub mod min_depth;
 pub mod min_diff_in_bst;
 pub mod min_k_bit_flips;

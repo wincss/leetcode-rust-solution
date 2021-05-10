@@ -1,7 +1,7 @@
 mod common;
 pub use common::utils::*;
 pub use common::ListNode;
-pub use common::TreeNode;
+pub use common::{PreorderIterator, TreeNode};
 
 pub struct Solution;
 pub mod accounts_merge;

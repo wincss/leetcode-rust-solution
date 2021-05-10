@@ -1,4 +1,4 @@
-use crate::TreeNode;
+use crate::{PreorderIterator, TreeNode};
 
 use serde_json::json;
 use std::cell::RefCell;
@@ -85,4 +85,15 @@ fn inorder_traversal() {
 fn postorder_traversal() {
     let root = TreeNode::from_array(&[Some(1), None, Some(2), Some(3)]);
     assert_eq!(root.unwrap().borrow().postorder(), vec![3, 2, 1]);
+}
+
+#[test]
+#[ignore]
+fn preorder_iterator() {
+    let root = TreeNode::from_json(json!([1, null, 2, 3, 4, 5, null, null, 6, null, 7, 8]));
+    let iter = PreorderIterator::new(&root);
+    assert_eq!(
+        iter.into_iter().collect::<Vec<i32>>(),
+        vec![1, 2, 3, 5, 7, 4, 6, 8]
+    );
 }

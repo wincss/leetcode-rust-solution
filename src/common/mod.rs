@@ -8,5 +8,6 @@ mod linked_list_tests;
 pub mod algorithms;
 pub mod utils;
 
+pub use binary_tree::PreorderIterator;
 pub use binary_tree::TreeNode;
 pub use linked_list::ListNode;

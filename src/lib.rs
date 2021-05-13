@@ -110,6 +110,7 @@ pub mod increasing_bst;
 pub mod inorder_traversal;
 pub mod insert_into_bst;
 pub mod insertion_sort_list;
+pub mod int_to_roman;
 pub mod intersection;
 pub mod invert_binary_tree;
 pub mod is_anagram;

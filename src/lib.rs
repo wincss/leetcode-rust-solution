@@ -256,6 +256,7 @@ pub mod reverse_words;
 pub mod rob;
 pub mod rob_ii;
 pub mod rob_iii;
+pub mod roman_to_int;
 pub mod rotate;
 pub mod rotate_right;
 pub mod search_matrix;

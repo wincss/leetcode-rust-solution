@@ -232,6 +232,7 @@ pub mod predict_the_winner;
 pub mod prefixes_div_by5;
 pub mod range_bitwise_and;
 pub mod range_sum_bst;
+pub mod rearrange_sticks;
 pub mod reconstruct_queue;
 pub mod recover_tree;
 pub mod reformat_number;

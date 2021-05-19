@@ -136,6 +136,7 @@ pub mod judge_square_sum;
 pub mod k_closest;
 pub mod knight_probability;
 pub mod kth_largest;
+pub mod kth_largest_value;
 pub mod ladder_length;
 pub mod large_group_positions;
 pub mod largest_divisible_subset;

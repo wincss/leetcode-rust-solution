@@ -170,6 +170,7 @@ pub mod max_score;
 pub mod max_sliding_window;
 pub mod max_sum_submatrix;
 pub mod max_turbulence_size;
+pub mod max_uncrossed_lines;
 pub mod maximal_rectangle;
 pub mod maximize_xor;
 pub mod maximum_gap;

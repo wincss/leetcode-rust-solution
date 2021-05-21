@@ -315,3 +315,4 @@ pub mod word_break;
 pub mod word_pattern;
 pub mod xor_queries;
 pub mod zigzag_level_order;
+pub mod xor_game;

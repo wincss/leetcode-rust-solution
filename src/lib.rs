@@ -255,6 +255,7 @@ pub mod reverse_between;
 pub mod reverse_bits;
 pub mod reverse_list;
 pub mod reverse_pairs;
+pub mod reverse_parentheses;
 pub mod reverse_print;
 pub mod reverse_string;
 pub mod reverse_words;

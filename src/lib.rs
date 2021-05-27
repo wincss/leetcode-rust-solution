@@ -302,6 +302,7 @@ pub mod swap_pairs;
 pub mod swim_in_water;
 pub mod title_to_number;
 pub mod top_k_frequent;
+pub mod total_hamming_distance;
 pub mod total_n_queens;
 pub mod transpose;
 pub mod trap;

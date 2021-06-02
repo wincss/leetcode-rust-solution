@@ -79,6 +79,7 @@ pub mod find_length_of_lcis;
 pub mod find_lu_slength;
 pub mod find_max_average;
 pub mod find_max_consecutive_ones;
+pub mod find_max_length;
 pub mod find_maximum_xor;
 pub mod find_median_sorted_arrays;
 pub mod find_min_arrow_shots;

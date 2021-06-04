@@ -250,6 +250,7 @@ pub mod relative_sort_array;
 pub mod remove_duplicate_letters;
 pub mod remove_duplicates;
 pub mod remove_element;
+pub mod remove_elements;
 pub mod remove_kdigits;
 pub mod remove_nth_from_end;
 pub mod remove_stones;

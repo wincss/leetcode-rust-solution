@@ -93,6 +93,7 @@ pub mod find_redundant_directed_connection;
 pub mod find_rotate_steps;
 pub mod find_shortest_sub_array;
 pub mod find_subsequences;
+pub mod find_target_sum_ways;
 pub mod find_the_difference;
 pub mod find_whether_exists_path;
 pub mod first_uniq_char;

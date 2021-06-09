@@ -28,6 +28,7 @@ pub mod can_partition;
 pub mod can_place_flowers;
 pub mod can_visit_all_rooms;
 pub mod candy;
+pub mod change;
 pub mod character_replacement;
 pub mod check_inclusion;
 pub mod check_possibility;

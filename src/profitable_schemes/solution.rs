@@ -6,25 +6,24 @@ impl Solution {
         let n = n as usize;
         let m = group.len();
         let sum = profit.iter().fold(0, |s, &v| s + v) as usize;
-        if min_profit as usize > sum {
+        let min_profit = min_profit as usize;
+        if min_profit > sum {
             return 0;
         }
-        let mut dp = vec![vec![0_i64; sum + 1]; n + 1];
+        let mut dp = vec![vec![0_i64; min_profit + 1]; n + 1];
         for i in 0..=n {
             dp[i][0] = 1;
         }
         for i in 0..m {
             for j in (0..=n).rev() {
-                for k in (0..=sum).rev() {
-                    if j >= group[i] as usize && k >= profit[i] as usize {
-                        dp[j][k] += dp[j - group[i] as usize][k - profit[i] as usize];
+                for k in (0..=min_profit).rev() {
+                    if j >= group[i] as usize {
+                        dp[j][k] += dp[j - group[i] as usize][k.saturating_sub(profit[i] as usize)];
                         dp[j][k] %= MOD;
                     }
                 }
             }
         }
-        dp[n][min_profit as usize..]
-            .into_iter()
-            .fold(0, |s, &v| (s + v) % MOD) as i32
+        dp[n][min_profit] as i32
     }
 }

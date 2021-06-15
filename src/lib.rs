@@ -239,6 +239,7 @@ pub mod palindrome_partition;
 pub mod partition;
 pub mod partition_labels;
 pub mod path_sum;
+pub mod peak_index_in_mountain_array;
 pub mod permute_unique;
 pub mod pivot_index;
 pub mod postorder_traversal;

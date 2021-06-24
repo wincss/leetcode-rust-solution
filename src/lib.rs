@@ -234,6 +234,7 @@ pub mod num_squares;
 pub mod num_ways;
 pub mod number_of_steps;
 pub mod odd_even_list;
+pub mod open_lock;
 pub mod palindrome_pairs;
 pub mod palindrome_partition;
 pub mod partition;

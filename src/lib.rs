@@ -221,6 +221,7 @@ pub mod next_greater_elements;
 pub mod next_permutation;
 pub mod nth_ugly_number;
 pub mod num_array;
+pub mod num_buses_to_destination;
 pub mod num_decodings;
 pub mod num_distinct;
 pub mod num_dup_digits_at_most_n;

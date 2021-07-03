@@ -74,6 +74,7 @@ pub mod find_circle_num;
 pub mod find_content_children;
 pub mod find_critical_and_pseudo_critical_edges;
 pub mod find_disappeared_numbers;
+pub mod find_error_nums;
 pub mod find_integers;
 pub mod find_itinerary;
 pub mod find_ladders;

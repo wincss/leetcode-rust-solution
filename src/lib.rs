@@ -51,6 +51,7 @@ pub mod count_binary_substrings;
 pub mod count_bits;
 pub mod count_digit_one;
 pub mod count_nodes;
+pub mod count_pairs;
 pub mod count_primes;
 pub mod count_substrings;
 pub mod count_triplets;

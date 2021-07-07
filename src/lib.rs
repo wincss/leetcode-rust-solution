@@ -237,6 +237,7 @@ pub mod num_rabbits;
 pub mod num_similar_groups;
 pub mod num_smaller_by_frequency;
 pub mod num_squares;
+pub mod num_subarrays_with_sum;
 pub mod num_ways;
 pub mod number_of_steps;
 pub mod odd_even_list;

@@ -5,17 +5,17 @@ impl Solution {
         let n = nums.len();
         let mut nums = nums;
         nums.sort();
-        let mut sum = 0;
         let mut left = 0;
         let mut result = 0;
+        let mut total = 0;
         for right in 0..n {
-            let mut total = (right - left) as i32 * nums[right] - sum;
+            if right > 0 {
+                total += (right - left) as i32 * (nums[right] - nums[right - 1]);
+            }
             while total > k && left < right {
-                sum -= nums[left];
                 total = total - nums[right] + nums[left];
                 left += 1;
             }
-            sum += nums[right];
             if total <= k {
                 result = result.max(right - left + 1);
             }

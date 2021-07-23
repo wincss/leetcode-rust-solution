@@ -191,6 +191,7 @@ pub mod maximal_rectangle;
 pub mod maximize_xor;
 pub mod maximum_gap;
 pub mod maximum_product;
+pub mod maximum_time;
 pub mod maximum_unique_subarray;
 pub mod median_sliding_window;
 pub mod merge;

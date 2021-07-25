@@ -275,6 +275,7 @@ pub mod remove_nth_from_end;
 pub mod remove_stones;
 pub mod reorder_list;
 pub mod repeated_substring_pattern;
+pub mod restore_array;
 pub mod restore_ip_addresses;
 pub mod reverse;
 pub mod reverse_between;

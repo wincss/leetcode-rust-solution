@@ -158,6 +158,7 @@ pub mod last_stone_weight_ii;
 pub mod leaf_similar;
 pub mod least_bricks;
 pub mod least_interval;
+pub mod length_of_lis;
 pub mod length_of_longest_substring;
 pub mod letter_combinations;
 pub mod level_order_bottom;

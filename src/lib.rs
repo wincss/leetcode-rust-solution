@@ -229,6 +229,7 @@ pub mod monotone_increasing_digits;
 pub mod move_zeroes;
 pub mod multiply;
 pub mod my_queue;
+pub mod network_delay_time;
 pub mod next_greater_elements;
 pub mod next_permutation;
 pub mod nth_ugly_number;

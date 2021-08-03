@@ -339,6 +339,7 @@ pub mod total_hamming_distance;
 pub mod total_n_queens;
 pub mod transpose;
 pub mod trap;
+pub mod triangle_number;
 pub mod trie;
 pub mod two_sum;
 pub mod unique_occurrences;

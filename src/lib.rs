@@ -64,6 +64,7 @@ pub mod equal_substring;
 pub mod erase_overlap_intervals;
 pub mod escape_maze;
 pub mod eval_rpn;
+pub mod eventual_safe_nodes;
 pub mod exist;
 pub mod expect_number;
 pub mod fair_candy_swap;

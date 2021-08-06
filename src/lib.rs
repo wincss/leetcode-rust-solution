@@ -303,6 +303,7 @@ pub mod search_range;
 pub mod set_zeroes;
 pub mod ship_within_days;
 pub mod shortest_palindrome;
+pub mod shortest_path_length;
 pub mod single_number;
 pub mod single_numbers;
 pub mod sliding_puzzle;

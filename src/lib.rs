@@ -349,6 +349,7 @@ pub mod triangle_number;
 pub mod tribonacci;
 pub mod trie;
 pub mod two_sum;
+pub mod unhappy_friends;
 pub mod unique_occurrences;
 pub mod unique_paths;
 pub mod update_board;

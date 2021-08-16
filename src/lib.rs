@@ -49,6 +49,7 @@ pub mod contains_duplicate;
 pub mod contains_nearby_almost_duplicate;
 pub mod convert_bst;
 pub mod convert_to_title;
+pub mod count_arrangement;
 pub mod count_binary_substrings;
 pub mod count_bits;
 pub mod count_digit_one;

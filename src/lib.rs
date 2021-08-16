@@ -33,6 +33,7 @@ pub mod change;
 pub mod character_replacement;
 pub mod check_inclusion;
 pub mod check_possibility;
+pub mod check_record;
 pub mod check_straight_line;
 pub mod check_subarray_sum;
 pub mod circular_array_loop;

@@ -33,4 +33,8 @@ fn main() {
     }
     let s = stringify!(1 + 2 * 4 - 8 * 3 + 25);
     println!("{} = {}", s, Solution::calculate(s.to_string()));
+
+    println!("{:?}", sv!["abc"; 8]);
+    println!("{:?}", sv!["abc"; 0]);
+
 }

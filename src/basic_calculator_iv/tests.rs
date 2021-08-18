@@ -3,40 +3,40 @@ use crate::*;
 #[test]
 fn case_1() {
     assert_eq!(
-        Solution::basic_calculator_iv("e + 8 - a + 5".to_string(), to_string_vec(&["e"]), vec![1]),
-        to_string_vec(&["-1*a", "14"])
+        Solution::basic_calculator_iv(s!("e + 8 - a + 5"), sv!["e"], vec![1]),
+        sv!["-1*a", "14"]
     );
 }
 #[test]
 fn case_2() {
     assert_eq!(
         Solution::basic_calculator_iv(
-            "e - 8 + temperature - pressure".to_string(),
-            to_string_vec(&["e", "temperature"]),
+            s!("e - 8 + temperature - pressure"),
+            sv!["e", "temperature"],
             vec![1, 12]
         ),
-        to_string_vec(&["-1*pressure", "5"])
+        sv!["-1*pressure", "5"]
     );
 }
 #[test]
 fn case_3() {
     assert_eq!(
-        Solution::basic_calculator_iv("(e + 8) * (e - 8)".to_string(), vec![], vec![]),
-        to_string_vec(&["1*e*e", "-64"])
+        Solution::basic_calculator_iv(s!("(e + 8) * (e - 8)"), sv![], vec![]),
+        sv!["1*e*e", "-64"]
     );
 }
 #[test]
 fn case_4() {
     assert_eq!(
-        Solution::basic_calculator_iv("7 - 7".to_string(), vec![], vec![]),
-        Vec::<String>::new()
+        Solution::basic_calculator_iv(s!("7 - 7"), sv![], vec![]),
+        sv![]
     );
 }
 #[test]
 fn case_5() {
     assert_eq!(
-        Solution::basic_calculator_iv("a * b * c + b * a * c * 4".to_string(), vec![], vec![]),
-        to_string_vec(&["5*a*b*c"])
+        Solution::basic_calculator_iv(s!("a * b * c + b * a * c * 4"), sv![], vec![]),
+        sv!["5*a*b*c"]
     );
 }
 
@@ -44,11 +44,11 @@ fn case_5() {
 fn case_6() {
     assert_eq!(
         Solution::basic_calculator_iv(
-            "((a - b) * (b - c) + (c - a)) * ((a - b) + (b - c) * (c - a))".to_string(),
-            vec![],
+            s!("((a - b) * (b - c) + (c - a)) * ((a - b) + (b - c) * (c - a))"),
+            sv![],
             vec![]
         ),
-        to_string_vec(&[
+        sv![
             "-1*a*a*b*b",
             "2*a*a*b*c",
             "-1*a*a*c*c",
@@ -71,6 +71,6 @@ fn case_6() {
             "1*a*b",
             "1*a*c",
             "-1*b*c"
-        ])
+        ]
     );
 }

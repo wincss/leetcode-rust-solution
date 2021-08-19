@@ -297,6 +297,7 @@ pub mod reverse_list;
 pub mod reverse_pairs;
 pub mod reverse_parentheses;
 pub mod reverse_print;
+pub mod reverse_str;
 pub mod reverse_string;
 pub mod reverse_vowels;
 pub mod reverse_words;

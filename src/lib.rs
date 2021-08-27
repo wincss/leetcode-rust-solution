@@ -314,6 +314,7 @@ pub mod rob_iii;
 pub mod roman_to_int;
 pub mod rotate;
 pub mod rotate_right;
+pub mod running_sum;
 pub mod search_matrix;
 pub mod search_range;
 pub mod set_zeroes;

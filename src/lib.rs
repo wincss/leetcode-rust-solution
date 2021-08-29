@@ -278,6 +278,7 @@ pub mod postorder_traversal;
 pub mod predict_the_winner;
 pub mod prefixes_div_by5;
 pub mod profitable_schemes;
+pub mod random_picker;
 pub mod range_bitwise_and;
 pub mod range_sum_bst;
 pub mod rearrange_sticks;

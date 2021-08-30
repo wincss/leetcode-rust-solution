@@ -52,6 +52,7 @@ pub mod contains_duplicate;
 pub mod contains_nearby_almost_duplicate;
 pub mod convert_bst;
 pub mod convert_to_title;
+pub mod corp_flight_bookings;
 pub mod count_arrangement;
 pub mod count_binary_substrings;
 pub mod count_bits;

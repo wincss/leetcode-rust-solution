@@ -45,6 +45,7 @@ pub mod combination_sum3;
 pub mod combination_sum4;
 pub mod combine;
 pub mod common_chars;
+pub mod compare_version;
 pub mod compress;
 pub mod connect_two_groups;
 pub mod consecutive_numbers_sum;

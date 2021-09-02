@@ -123,6 +123,7 @@ pub mod frequency_sort;
 pub mod generate;
 pub mod generate_matrix;
 pub mod generate_trees;
+pub mod get_kth_from_end;
 pub mod get_least_numbers;
 pub mod get_max_grid_happiness;
 pub mod get_maximum_generated;

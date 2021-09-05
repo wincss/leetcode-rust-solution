@@ -383,3 +383,4 @@ pub mod word_pattern;
 pub mod xor_game;
 pub mod xor_queries;
 pub mod zigzag_level_order;
+pub mod search;

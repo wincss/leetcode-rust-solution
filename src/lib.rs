@@ -121,6 +121,7 @@ pub mod flip_and_invert_image;
 pub mod four_sum;
 pub mod four_sum_count;
 pub mod frequency_sort;
+pub mod gcd_sort;
 pub mod generate;
 pub mod generate_matrix;
 pub mod generate_trees;

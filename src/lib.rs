@@ -97,6 +97,7 @@ pub mod find_max_average;
 pub mod find_max_consecutive_ones;
 pub mod find_max_form;
 pub mod find_max_length;
+pub mod find_maximized_capital;
 pub mod find_maximum_xor;
 pub mod find_median_sorted_arrays;
 pub mod find_min_arrow_shots;

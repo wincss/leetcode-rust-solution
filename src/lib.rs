@@ -116,6 +116,7 @@ pub mod find_target_sum_ways;
 pub mod find_the_difference;
 pub mod find_unsorted_subarray;
 pub mod find_whether_exists_path;
+pub mod first_day_been_in_all_rooms;
 pub mod first_uniq_char;
 pub mod flatten;
 pub mod flip_and_invert_image;

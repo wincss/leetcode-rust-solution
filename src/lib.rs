@@ -31,6 +31,7 @@ pub mod can_place_flowers;
 pub mod can_see_persons_count;
 pub mod can_visit_all_rooms;
 pub mod candy;
+pub mod chalk_replacer;
 pub mod change;
 pub mod character_replacement;
 pub mod check_inclusion;

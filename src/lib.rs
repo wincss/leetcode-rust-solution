@@ -38,6 +38,7 @@ pub mod check_possibility;
 pub mod check_record;
 pub mod check_straight_line;
 pub mod check_subarray_sum;
+pub mod check_valid_string;
 pub mod circular_array_loop;
 pub mod clumsy;
 pub mod combination_sum;

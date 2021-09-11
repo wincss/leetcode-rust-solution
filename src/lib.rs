@@ -272,6 +272,7 @@ pub mod num_squares;
 pub mod num_subarrays_with_sum;
 pub mod num_ways;
 pub mod number_of_arithmetic_slices;
+pub mod number_of_good_subsets;
 pub mod number_of_steps;
 pub mod number_of_unique_good_subsequences;
 pub mod number_of_weak_characters;

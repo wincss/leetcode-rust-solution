@@ -347,6 +347,7 @@ pub mod single_numbers;
 pub mod sliding_puzzle;
 pub mod smaller_numbers_than_current;
 pub mod smallest_k;
+pub mod smallest_missing_value_subtree;
 pub mod smallest_string_with_swaps;
 pub mod snakes_and_ladders;
 pub mod solve;

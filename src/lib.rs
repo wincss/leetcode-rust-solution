@@ -109,6 +109,7 @@ pub mod find_mode;
 pub mod find_num_of_valid_words;
 pub mod find_order;
 pub mod find_paths;
+pub mod find_peak_element;
 pub mod find_redundant_connection;
 pub mod find_redundant_directed_connection;
 pub mod find_rotate_steps;

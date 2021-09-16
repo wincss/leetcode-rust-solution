@@ -167,6 +167,7 @@ pub mod is_scramble;
 pub mod is_toeplitz_matrix;
 pub mod is_valid;
 pub mod is_valid_serialization;
+pub mod is_valid_sudoku;
 pub mod island_perimeter;
 pub mod judge_circle;
 pub mod judge_point24;

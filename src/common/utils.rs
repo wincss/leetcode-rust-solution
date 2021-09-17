@@ -8,6 +8,22 @@ pub fn to_string_vec<T: Display>(list: &[T]) -> Vec<String> {
     ret
 }
 
+pub fn to_board<const M: usize, const N: usize>(board: [[&str; M]; N]) -> Vec<Vec<char>> {
+    board
+        .iter()
+        .map(|row| {
+            row.iter()
+                .map(|s| {
+                    for c in s.chars() {
+                        return c;
+                    }
+                    unreachable!();
+                })
+                .collect()
+        })
+        .collect()
+}
+
 #[macro_export]
 macro_rules! s {
     ($s:expr) => {

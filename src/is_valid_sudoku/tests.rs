@@ -1,25 +1,8 @@
 use crate::*;
 
-fn convert_sv(board: [[&str; 9]; 9]) -> Vec<Vec<char>> {
-    board
-        .iter()
-        .map(|v| {
-            v.iter()
-                .map(|s| {
-                    let mut c = '.';
-                    for i in s.chars() {
-                        c = i;
-                    }
-                    c
-                })
-                .collect()
-        })
-        .collect()
-}
-
 #[test]
 fn case_1() {
-    assert!(Solution::is_valid_sudoku(convert_sv([
+    assert!(Solution::is_valid_sudoku(to_board([
         ["5", "3", ".", ".", "7", ".", ".", ".", "."],
         ["6", ".", ".", "1", "9", "5", ".", ".", "."],
         [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -34,7 +17,7 @@ fn case_1() {
 
 #[test]
 fn case_2() {
-    assert!(!Solution::is_valid_sudoku(convert_sv([
+    assert!(!Solution::is_valid_sudoku(to_board([
         ["8", "3", ".", ".", "7", ".", ".", ".", "."],
         ["6", ".", ".", "1", "9", "5", ".", ".", "."],
         [".", "9", "8", ".", ".", ".", ".", "6", "."],

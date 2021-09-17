@@ -17,7 +17,7 @@ impl Solution {
                 *result += dp[m - 1][j];
             }
             *result %= MOD;
-        };
+        }
         dp[start_row as usize][start_column as usize] = 1;
         for _ in 0..max_move {
             calc(&dp, m, n, &mut result);

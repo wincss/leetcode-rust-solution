@@ -68,16 +68,19 @@ impl Solution {
             if !tree.borrow().child.contains_key(&c) {
                 return;
             }
-            let tree = Rc::clone(&tree.borrow_mut().child[&c]);
-            for &i in tree.borrow().ending.iter() {
+            let next = Rc::clone(&tree.borrow().child[&c]);
+            for &i in next.borrow().ending.iter() {
                 result.insert(i);
             }
             board[x][y] = '#';
-            dfs(x + 1, y, Rc::clone(&tree), n, m, board, result);
-            dfs(x.wrapping_sub(1), y, Rc::clone(&tree), n, m, board, result);
-            dfs(x, y + 1, Rc::clone(&tree), n, m, board, result);
-            dfs(x, y.wrapping_sub(1), Rc::clone(&tree), n, m, board, result);
+            dfs(x + 1, y, Rc::clone(&next), n, m, board, result);
+            dfs(x.wrapping_sub(1), y, Rc::clone(&next), n, m, board, result);
+            dfs(x, y + 1, Rc::clone(&next), n, m, board, result);
+            dfs(x, y.wrapping_sub(1), Rc::clone(&next), n, m, board, result);
             board[x][y] = c;
+            if next.borrow().child.is_empty() {
+                tree.borrow_mut().child.remove(&c);
+            }
         }
         let n = board.len();
         let m = if n > 0 { board[0].len() } else { 0 };

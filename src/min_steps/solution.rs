@@ -2,17 +2,17 @@ use crate::*;
 
 impl Solution {
     pub fn min_steps(n: i32) -> i32 {
-        let n = n as usize;
-        let mut dp = vec![std::usize::MAX; n + 1];
-        dp[1] = 0;
-        for i in 2..=n {
-            for j in 1..=(i as f64).sqrt() as usize {
-                if i % j == 0 {
-                    dp[i] = dp[i].min(dp[j].saturating_add(i / j));
-                    dp[i] = dp[i].min(dp[i / j].saturating_add(j));
-                }
+        let mut i = 2;
+        let mut n = n;
+        let mut s = 0;
+        while n > 1 {
+            if n % i == 0 {
+                s += i;
+                n /= i;
+            } else {
+                i += 1;
             }
         }
-        dp[n] as i32
+        s
     }
 }

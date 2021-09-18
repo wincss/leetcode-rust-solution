@@ -8,17 +8,15 @@ impl Solution {
             tree: &Vec<Vec<usize>>,
             nums: &Vec<i32>,
             values: &mut Vec<bool>,
-            visited: &mut Vec<bool>,
+            exclude_child: usize,
         ) {
             let mut queue = VecDeque::new();
             queue.push_back(node);
-            visited[node] = true;
             while let Some(current) = queue.pop_front() {
                 values[nums[current] as usize] = true;
                 for &child in tree[current].iter() {
-                    if !visited[child] {
+                    if child != exclude_child {
                         queue.push_back(child);
-                        visited[child] = true;
                     }
                 }
             }
@@ -36,11 +34,11 @@ impl Solution {
         for idx in 0..n {
             if nums[idx] == 1 {
                 let mut v = vec![false; 2 + m as usize];
-                let mut vv = vec![false; n];
                 let mut missing = 2;
                 let mut parent = idx;
+                let mut child = idx;
                 loop {
-                    bfs(parent, &tree, &nums, &mut v, &mut vv);
+                    bfs(parent, &tree, &nums, &mut v, child);
                     while v[missing] {
                         missing += 1;
                     }
@@ -49,6 +47,7 @@ impl Solution {
                     if parents[parent] == -1 {
                         break;
                     }
+                    child = parent;
                     parent = parents[parent] as usize;
                 }
             }

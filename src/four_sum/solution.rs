@@ -23,15 +23,12 @@ impl Solution {
                 for (&(v1, v2), x) in p1.iter() {
                     for (&(v3, v4), y) in p2.iter() {
                         let mut available = false;
-                        for &(_, p1_second) in x.iter() {
+                        'outer: for &(_, p1_second) in x.iter() {
                             for &(p2_first, _) in y.iter() {
                                 if p1_second < p2_first {
                                     available = true;
-                                    break;
+                                    break 'outer;
                                 }
-                            }
-                            if available {
-                                break;
                             }
                         }
                         if available {

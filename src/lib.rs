@@ -246,6 +246,7 @@ pub mod min_pair_sum;
 pub mod min_patches;
 pub mod min_sessions;
 pub mod min_skips;
+pub mod min_steps;
 pub mod min_swaps_couples;
 pub mod minimal_steps;
 pub mod minimum_effort_path;

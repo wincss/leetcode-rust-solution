@@ -168,6 +168,7 @@ pub mod is_same_tree;
 pub mod is_scramble;
 pub mod is_toeplitz_matrix;
 pub mod is_valid;
+pub mod is_valid_bst;
 pub mod is_valid_serialization;
 pub mod is_valid_sudoku;
 pub mod island_perimeter;

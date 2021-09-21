@@ -188,3 +188,37 @@ impl Iterator for PreorderIterator {
         }
     }
 }
+
+pub struct InorderIterator {
+    stack: Vec<(Rc<RefCell<TreeNode>>, bool)>,
+}
+
+impl InorderIterator {
+    pub fn new(root: &Option<Rc<RefCell<TreeNode>>>) -> Self {
+        let mut stack = vec![];
+        if let Some(v) = root.as_ref() {
+            stack.push((Rc::clone(v), true));
+        }
+        Self { stack }
+    }
+}
+
+impl Iterator for InorderIterator {
+    type Item = i32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        while let Some((node, is_left)) = self.stack.pop() {
+            if is_left && node.borrow().left.is_some() {
+                self.stack.push((node.clone(), false));
+                self.stack
+                    .push((node.borrow().left.as_ref().unwrap().clone(), true));
+            } else {
+                if let Some(right) = node.borrow().right.as_ref().map(Rc::clone) {
+                    self.stack.push((right, true));
+                }
+                return Some(node.borrow().val);
+            }
+        }
+        None
+    }
+}

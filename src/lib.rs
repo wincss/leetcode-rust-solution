@@ -163,6 +163,7 @@ pub mod is_monotonic;
 pub mod is_palindrome;
 pub mod is_possible;
 pub mod is_power_of_four;
+pub mod is_power_of_three;
 pub mod is_power_of_two;
 pub mod is_same_tree;
 pub mod is_scramble;

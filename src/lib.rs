@@ -368,6 +368,7 @@ pub mod sorted_list_to_bst;
 pub mod sorted_squares;
 pub mod spiral_order;
 pub mod split_into_fibonacci;
+pub mod split_list_to_parts;
 pub mod stone_game;
 pub mod str_str;
 pub mod strange_printer;

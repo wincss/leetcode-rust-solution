@@ -198,6 +198,7 @@ pub mod level_order_bottom;
 pub mod longest_awesome;
 pub mod longest_common_subsequence;
 pub mod longest_ones;
+pub mod longest_palindrome;
 pub mod longest_palindrome_subseq;
 pub mod longest_subarray;
 pub mod longest_substring;

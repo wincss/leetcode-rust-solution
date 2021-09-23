@@ -18,6 +18,7 @@ pub mod balanced_string_split;
 pub mod basic_calculator_iv;
 pub mod beauty_sum;
 pub mod binary_tree_paths;
+pub mod box_delivering;
 pub mod bst_iterator;
 pub mod build_tree;
 pub mod calc_equation;

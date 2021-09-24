@@ -1,5 +1,11 @@
 use crate::*;
 
+use std::{
+    fs::File,
+    io::{BufRead, BufReader, Error},
+    path::PathBuf,
+};
+
 #[test]
 fn case_1() {
     assert_eq!(
@@ -45,4 +51,17 @@ fn case_4() {
         ),
         14
     );
+}
+
+#[test]
+fn case_5() -> Result<(), Error> {
+    let mut filename = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    filename.push("src/box_delivering/case_38.in");
+    let file = File::open(filename)?;
+    let reader = BufReader::new(file);
+    for line in reader.lines() {
+        println!("{}", line.unwrap());
+    }
+
+    Ok(())
 }

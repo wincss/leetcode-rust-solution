@@ -142,6 +142,7 @@ pub mod get_maximum_generated;
 pub mod get_minimum_difference;
 pub mod get_permutation;
 pub mod get_row;
+pub mod get_sum;
 pub mod group_anagrams;
 pub mod group_the_people;
 pub mod hamming_distance;

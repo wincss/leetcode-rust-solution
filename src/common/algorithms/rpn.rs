@@ -68,15 +68,11 @@ impl<'a, T> OperatorMap<T> {
                 j @ Token::Number(_) => result.push(j),
                 j @ Token::Parentheses(true) => ops.push(j),
                 Token::Operator(v) => {
-                    while let Some(token) = ops.last() {
-                        if let Token::Operator(v0) = token {
-                            if v0.precedence < v.precedence {
-                                break;
-                            }
-                            result.push(ops.pop().unwrap())
-                        } else {
+                    while let Some(Token::Operator(op)) = ops.last() {
+                        if op.precedence < v.precedence {
                             break;
                         }
+                        result.push(ops.pop().unwrap())
                     }
                     ops.push(Token::Operator(v));
                 }

@@ -1,5 +1,6 @@
 use crate::*;
 
+use serde_json;
 use std::{
     fs::File,
     io::{BufRead, BufReader, Error},
@@ -53,15 +54,31 @@ fn case_4() {
     );
 }
 
+fn testcase_from_file(filename: &str) -> Result<(), Error> {
+    let mut filepath = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    filepath.push(filename);
+    let file = File::open(filepath)?;
+    let reader = BufReader::new(file);
+    let mut lines = reader.lines();
+    let boxes: Vec<Vec<i32>> = serde_json::from_str(&lines.next().unwrap()?[..])?;
+    let ports_count: i32 = lines.next().unwrap()?.parse().unwrap();
+    let max_boxes: i32 = lines.next().unwrap()?.parse().unwrap();
+    let max_weight: i32 = lines.next().unwrap()?.parse().unwrap();
+    let output: i32 = lines.next().unwrap()?.parse().unwrap();
+
+    assert_eq!(
+        Solution::box_delivering(boxes, ports_count, max_boxes, max_weight),
+        output,
+    );
+    Ok(())
+}
+
 #[test]
 fn case_5() -> Result<(), Error> {
-    let mut filename = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-    filename.push("src/box_delivering/case_38.in");
-    let file = File::open(filename)?;
-    let reader = BufReader::new(file);
-    for line in reader.lines() {
-        println!("{}", line.unwrap());
-    }
+    testcase_from_file("src/box_delivering/case_38.in")
+}
 
-    Ok(())
+#[test]
+fn case_6() -> Result<(), Error> {
+    testcase_from_file("src/box_delivering/case_40.in")
 }

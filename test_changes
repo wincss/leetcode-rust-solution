@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for i in $(git status --porcelain | cut -c4- | awk -F '/' '$1=="src" {print $2}' | sort | uniq)
+do
+    if [[ -d "src/$i" ]]
+    then
+        cargo test $i
+    fi
+done

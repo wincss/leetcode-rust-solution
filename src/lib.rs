@@ -147,6 +147,7 @@ pub mod group_anagrams;
 pub mod group_the_people;
 pub mod hamming_distance;
 pub mod hamming_weight;
+pub mod has_path_sum;
 pub mod increasing_bst;
 pub mod inorder_traversal;
 pub mod insert_into_bst;

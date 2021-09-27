@@ -1,5 +1,7 @@
 use std::fmt::Display;
 
+pub use serde_json::json;
+
 pub fn to_string_vec<T: Display>(list: &[T]) -> Vec<String> {
     let mut ret = vec![];
     for i in list.iter() {

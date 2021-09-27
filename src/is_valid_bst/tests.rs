@@ -1,7 +1,5 @@
 use crate::*;
 
-use serde_json::json;
-
 #[test]
 fn case_1() {
     assert!(Solution::is_valid_bst(TreeNode::from_json(json!([

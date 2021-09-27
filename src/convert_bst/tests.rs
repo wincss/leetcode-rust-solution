@@ -1,7 +1,5 @@
 use crate::*;
 
-use serde_json::json;
-
 #[test]
 fn case_1() {
     let input = TreeNode::from_json(json!([5, 2, 13]));

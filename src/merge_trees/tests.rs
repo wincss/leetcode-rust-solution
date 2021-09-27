@@ -1,7 +1,5 @@
 use crate::*;
 
-use serde_json::json;
-
 #[test]
 fn case_1() {
     assert_eq!(

@@ -51,6 +51,7 @@ pub mod combine;
 pub mod common_chars;
 pub mod compare_version;
 pub mod compress;
+pub mod compute_area;
 pub mod connect_two_groups;
 pub mod consecutive_numbers_sum;
 pub mod contains_duplicate;

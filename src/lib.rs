@@ -202,6 +202,7 @@ pub mod length_of_lis;
 pub mod length_of_longest_substring;
 pub mod letter_combinations;
 pub mod level_order_bottom;
+pub mod license_key_formatting;
 pub mod longest_awesome;
 pub mod longest_common_subsequence;
 pub mod longest_ones;

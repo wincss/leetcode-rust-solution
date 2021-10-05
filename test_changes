@@ -1,9 +1,31 @@
 #!/bin/bash
 
+ARGS=()
+OPTIONS=()
+
+for i in "$@"
+do
+    case "$i" in
+    --)
+        OPTIONS=("${ARGS[@]}")
+        ARGS=()
+        ;;
+    *)
+        ARGS+=("$i")
+        ;;
+    esac
+done
+
+if [[ "${#OPTIONS[@]}" -eq 0 ]]
+then
+        OPTIONS=("${ARGS[@]}")
+        ARGS=()
+fi
+
 for i in $(git status --porcelain | cut -c4- | awk -F '/' '$1=="src" {print $2}' | sort | uniq)
 do
     if [[ -d "src/$i" ]]
     then
-        cargo test $i
+        cargo test "${OPTIONS[@]}" "$i" -- "${ARGS[@]}"
     fi
 done

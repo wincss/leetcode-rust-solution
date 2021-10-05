@@ -394,6 +394,7 @@ pub mod sum_of_unique;
 pub mod summary_ranges;
 pub mod swap_pairs;
 pub mod swim_in_water;
+pub mod third_max;
 pub mod title_to_number;
 pub mod to_hex;
 pub mod top_k_frequent;

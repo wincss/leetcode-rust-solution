@@ -67,6 +67,7 @@ pub mod count_nodes;
 pub mod count_of_atoms;
 pub mod count_pairs;
 pub mod count_primes;
+pub mod count_segments;
 pub mod count_substrings;
 pub mod count_triplets;
 pub mod decode;

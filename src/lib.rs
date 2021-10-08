@@ -119,6 +119,7 @@ pub mod find_paths;
 pub mod find_peak_element;
 pub mod find_redundant_connection;
 pub mod find_redundant_directed_connection;
+pub mod find_repeated_dna_sequences;
 pub mod find_rotate_steps;
 pub mod find_second_minimum_value;
 pub mod find_shortest_sub_array;

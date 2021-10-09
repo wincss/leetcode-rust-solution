@@ -422,3 +422,4 @@ pub mod word_pattern;
 pub mod xor_game;
 pub mod xor_queries;
 pub mod zigzag_level_order;
+pub mod summary_ranges_from_stream;

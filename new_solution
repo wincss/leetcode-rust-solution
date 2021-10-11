@@ -1,12 +1,20 @@
 #!/bin/bash
 
 FUNNAME=$1
-CONTENT=
+CONTENT=$(pbpaste)
+STYLE=function
 
 if [ -z "$FUNNAME" ]
 then
-    FUNNAME=$(pbpaste | perl -n -e'/pub fn ([^(]+)/ && print $1')
-    CONTENT=$(pbpaste)
+    if [[ "$CONTENT" =~ "impl Solution"* ]]
+    then
+        FUNNAME=$(printf '%s\n' "$CONTENT" | perl -n -e'/pub fn ([^ (]+)/ && print $1')
+        STYLE=function
+    else
+        FUNNAME=$(printf '%s\n' "$CONTENT" | perl -n -e'/struct ([^ ({]+)/ && print $1')
+        STYLE=class
+        # TODO: format name to snake_case
+    fi
 fi
 
 test -z "$FUNNAME" && exit
@@ -44,12 +52,17 @@ impl Solution {
 }
 EOF
 else
-    cat > "$DIR/solution.rs" <<EOF
-use crate::*;
-
-${CONTENT/\}/todo!();}
-}
-EOF
+    if [[ "$STYLE" == "function" ]]
+    then
+        printf '%s\n' "$CONTENT" | perl -p -e'
+            s/^(\s*)(pub fn.*)$/\1\2\n\1    todo();/g' > "$DIR/solution.rs"
+    else
+        printf '%s\n' "$CONTENT" | perl -p -e'
+            s/(?<!pub )struct/pub struct/g;
+            s/(?<!pub )fn/pub fn/g;
+            s/^(\s*)(pub fn.*)$/\1#[allow(dead_code)]\n\1\2\n\1    todo();/g' > "$DIR/solution.rs"
+        # TODO: remove doc comment in the end
+    fi
 fi
 
 grep "\<$FUNNAME\>" src/lib.rs > /dev/null || echo "pub mod $FUNNAME;" >> src/lib.rs

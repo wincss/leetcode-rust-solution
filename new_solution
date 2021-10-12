@@ -54,7 +54,7 @@ EOF
 else
     if [[ "$STYLE" == "function" ]]
     then
-        printf '%s\n' "$CONTENT" | perl -p -e'
+        printf 'use crate::*;\n%s\n' "$CONTENT" | perl -p -e'
             s/^(\s*)(pub fn.*)$/\1\2\n\1    todo();/g' > "$DIR/solution.rs"
     else
         printf '%s\n' "$CONTENT" | perl -p -e'

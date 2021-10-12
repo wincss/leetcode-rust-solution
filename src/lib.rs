@@ -132,6 +132,7 @@ pub mod find_whether_exists_path;
 pub mod find_words;
 pub mod first_day_been_in_all_rooms;
 pub mod first_uniq_char;
+pub mod fizz_buzz;
 pub mod flatten;
 pub mod flip_and_invert_image;
 pub mod four_sum;

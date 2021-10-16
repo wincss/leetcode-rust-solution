@@ -194,6 +194,7 @@ pub mod k_weakest_rows;
 pub mod knight_probability;
 pub mod kth_largest;
 pub mod kth_largest_value;
+pub mod kth_smallest;
 pub mod ladder_length;
 pub mod large_group_positions;
 pub mod largest_divisible_subset;

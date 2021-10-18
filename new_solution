@@ -1,25 +1,28 @@
 #!/bin/bash
 
-FUNNAME=$1
 CONTENT=$(pbpaste)
 STYLE=function
 
-if [ -z "$FUNNAME" ]
+if [[ "$CONTENT" =~ "impl Solution"* ]]
 then
-    if [[ "$CONTENT" =~ "impl Solution"* ]]
-    then
-        FUNNAME=$(printf '%s\n' "$CONTENT" | perl -n -e'/pub fn ([^ (]+)/ && print $1')
-        STYLE=function
-    else
-        FUNNAME=$(printf '%s\n' "$CONTENT" | perl -n -e'/struct ([^ ({]+)/ && print $1')
-        STYLE=class
-        # TODO: format name to snake_case
-    fi
+    FUNNAME=$(printf '%s\n' "$CONTENT" | perl -n -e'/pub fn ([^ (]+)/ && print $1')
+    STYLE=function
+else
+    FUNNAME=$(printf '%s\n' "$CONTENT" | perl -n -e'/struct ([^ ({]+)/ && print $1')
+    STYLE=class
+    # TODO: format name to snake_case
 fi
 
-test -z "$FUNNAME" && exit
+if [[ "$1" ]]
+then
+    DIRNAME="$1"
+else
+    DIRNAME="$FUNNAME"
+fi
 
-DIR="src/$FUNNAME"
+test -z "$DIRNAME" && exit
+
+DIR="src/$DIRNAME"
 test -e "$DIR/mod.rs" && exit
 echo "Creating code snippet for ${FUNNAME}..."
 mkdir -p "$DIR"
@@ -30,15 +33,28 @@ mod solution;
 mod tests;
 EOF
 
+if [[ "$STYLE" == "function" ]]
+then
 cat > "$DIR/tests.rs" <<EOF
 use crate::*;
 
 #[test]
 fn case_1() {
-    // Solution::$FUNNAME
+    // assert_eq!(Solution::$FUNNAME(...), ...);
     todo!();
 }
 EOF
+else
+cat > "$DIR/tests.rs" <<EOF
+use super::solution::*;
+
+#[test]
+fn case_1() {
+    // let mut ... = $FUNNAME::new();
+    todo!();
+}
+EOF
+fi
 
 if [ -z "$CONTENT" ]
 then
@@ -65,5 +81,5 @@ else
     fi
 fi
 
-grep "\<$FUNNAME\>" src/lib.rs > /dev/null || echo "pub mod $FUNNAME;" >> src/lib.rs
+grep "\<$DIRNAME\>" src/lib.rs > /dev/null || echo "pub mod $DIRNAME;" >> src/lib.rs
 rustfmt src/lib.rs

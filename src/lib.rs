@@ -426,6 +426,7 @@ pub mod video_stitching;
 pub mod ways_to_step;
 pub mod wiggle_max_length;
 pub mod word_break;
+pub mod word_dictionary;
 pub mod word_pattern;
 pub mod xor_game;
 pub mod xor_queries;

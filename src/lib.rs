@@ -264,6 +264,7 @@ pub mod min_diff_in_bst;
 pub mod min_distance;
 pub mod min_k_bit_flips;
 pub mod min_malware_spread;
+pub mod min_moves;
 pub mod min_operations;
 pub mod min_pair_sum;
 pub mod min_patches;

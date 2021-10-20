@@ -412,6 +412,7 @@ pub mod top_k_frequent;
 pub mod total_hamming_distance;
 pub mod total_n_queens;
 pub mod traffic_command;
+pub mod trailing_zeroes;
 pub mod transpose;
 pub mod trap;
 pub mod triangle_number;

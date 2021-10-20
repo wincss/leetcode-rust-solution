@@ -320,6 +320,7 @@ pub mod path_sum;
 pub mod peak_index_in_mountain_array;
 pub mod permute_unique;
 pub mod pivot_index;
+pub mod plus_one;
 pub mod postorder_traversal;
 pub mod predict_the_winner;
 pub mod prefixes_div_by5;

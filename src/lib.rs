@@ -57,6 +57,7 @@ pub mod compress;
 pub mod compute_area;
 pub mod connect_two_groups;
 pub mod consecutive_numbers_sum;
+pub mod construct_rectangle;
 pub mod contains_duplicate;
 pub mod contains_nearby_almost_duplicate;
 pub mod convert_bst;

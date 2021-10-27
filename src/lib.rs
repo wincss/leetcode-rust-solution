@@ -344,6 +344,7 @@ pub mod remove_kdigits;
 pub mod remove_nth_from_end;
 pub mod remove_stones;
 pub mod reorder_list;
+pub mod reordered_power_of2;
 pub mod repeated_substring_pattern;
 pub mod restore_array;
 pub mod restore_ip_addresses;

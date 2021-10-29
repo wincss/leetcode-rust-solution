@@ -183,6 +183,7 @@ pub mod is_power_of_three;
 pub mod is_power_of_two;
 pub mod is_same_tree;
 pub mod is_scramble;
+pub mod is_self_crossing;
 pub mod is_toeplitz_matrix;
 pub mod is_valid;
 pub mod is_valid_bst;

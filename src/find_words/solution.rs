@@ -51,7 +51,7 @@ impl Trie {
 }
 
 impl Solution {
-    pub fn find_words(board: Vec<Vec<char>>, words: Vec<String>) -> Vec<String> {
+    pub fn find_words_212(board: Vec<Vec<char>>, words: Vec<String>) -> Vec<String> {
         fn dfs(
             x: usize,
             y: usize,
@@ -100,6 +100,29 @@ impl Solution {
             .into_iter()
             .enumerate()
             .filter_map(|(idx, s)| if result.contains(&idx) { Some(s) } else { None })
+            .collect()
+    }
+
+    pub fn find_words_500(words: Vec<String>) -> Vec<String> {
+        const ROW: [u8; 26] = [
+            2, 3, 3, 2, 1, 2, 2, 2, 1, 2, 2, 2, 3, 3, 1, 1, 1, 1, 2, 1, 1, 3, 1, 3, 1, 3,
+        ];
+        words
+            .into_iter()
+            .filter(|w| {
+                let mut last = None;
+                for c in w.chars() {
+                    let row = ROW[c.to_ascii_lowercase() as u8 as usize - 97];
+                    if last.is_none() {
+                        last = Some(row);
+                    } else {
+                        if last != Some(row) {
+                            return false;
+                        }
+                    }
+                }
+                true
+            })
             .collect()
     }
 }

@@ -2,7 +2,7 @@ use crate::*;
 
 #[test]
 fn case_1() {
-    let mut output = Solution::find_words(
+    let mut output = Solution::find_words_212(
         to_board([
             ["o", "a", "a", "n"],
             ["e", "t", "a", "e"],
@@ -17,13 +17,13 @@ fn case_1() {
 
 #[test]
 fn case_2() {
-    let output = Solution::find_words(to_board([["a", "b"], ["c", "d"]]), sv!["abcd"]);
+    let output = Solution::find_words_212(to_board([["a", "b"], ["c", "d"]]), sv!["abcd"]);
     assert_eq!(output, sv![]);
 }
 
 #[test]
 fn case_3() {
-    let mut output = Solution::find_words(
+    let mut output = Solution::find_words_212(
         to_board([["a", "b", "c"], ["a", "e", "d"], ["a", "f", "g"]]),
         sv!["abcdefg", "gfedcbaaa", "eaabcdgfa", "befa", "dgc", "ade"],
     );
@@ -33,7 +33,7 @@ fn case_3() {
 
 #[test]
 fn case_4() {
-    let mut output = Solution::find_words(
+    let mut output = Solution::find_words_212(
         to_board([
             ["o", "a", "b", "n"],
             ["o", "t", "a", "e"],
@@ -44,4 +44,14 @@ fn case_4() {
     );
     output.sort();
     assert_eq!(output, sv!["oa", "oaa"]);
+}
+
+#[test]
+fn case_500_1() {
+    assert_eq!(
+        Solution::find_words_500(sv![
+            "Hello", "Alaska", "Dad", "Peace", "omk", "adsdf", "sfd"
+        ]),
+        sv!["Alaska", "Dad", "adsdf", "sfd"]
+    )
 }

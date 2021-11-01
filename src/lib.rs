@@ -80,6 +80,7 @@ pub mod delete_and_earn;
 pub mod delete_duplicates;
 pub mod dest_city;
 pub mod distance_limited_paths_exist;
+pub mod distribute_candies;
 pub mod duplicate_zeros;
 pub mod equal_substring;
 pub mod erase_overlap_intervals;

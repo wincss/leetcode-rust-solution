@@ -227,6 +227,7 @@ pub mod make_connected;
 pub mod make_good;
 pub mod matrix_reshape;
 pub mod matrix_score;
+pub mod max_count;
 pub mod max_envelopes;
 pub mod max_freq;
 pub mod max_frequency;

@@ -197,6 +197,7 @@ pub mod judge_circle;
 pub mod judge_point24;
 pub mod judge_square_sum;
 pub mod k_closest;
+pub mod k_inverse_pairs;
 pub mod k_weakest_rows;
 pub mod knight_probability;
 pub mod kth_largest;

@@ -157,6 +157,7 @@ pub mod get_least_numbers;
 pub mod get_max_grid_happiness;
 pub mod get_maximum_generated;
 pub mod get_minimum_difference;
+pub mod get_money_amount;
 pub mod get_permutation;
 pub mod get_row;
 pub mod get_sum;

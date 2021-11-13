@@ -230,6 +230,7 @@ pub mod longest_substring;
 pub mod majority_element;
 pub mod make_connected;
 pub mod make_good;
+pub mod map_sum;
 pub mod matrix_reshape;
 pub mod matrix_score;
 pub mod max_count;

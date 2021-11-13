@@ -79,6 +79,7 @@ pub mod decode;
 pub mod delete_and_earn;
 pub mod delete_duplicates;
 pub mod dest_city;
+pub mod detect_capital_use;
 pub mod distance_limited_paths_exist;
 pub mod distribute_candies;
 pub mod duplicate_zeros;

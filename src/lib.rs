@@ -23,6 +23,7 @@ pub mod binary_tree_paths;
 pub mod bitwise_complement;
 pub mod bst_iterator;
 pub mod build_tree;
+pub mod bulb_switch;
 pub mod calc_equation;
 pub mod calculate;
 pub mod can_complete_circuit;

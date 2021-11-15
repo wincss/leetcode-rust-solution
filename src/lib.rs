@@ -148,6 +148,7 @@ pub mod four_sum;
 pub mod four_sum_count;
 pub mod fraction_to_decimal;
 pub mod frequency_sort;
+pub mod friend_requests;
 pub mod full_justify;
 pub mod gcd_sort;
 pub mod generate;

@@ -1,8 +1,6 @@
 use crate::*;
 
-use std::collections::HashMap;
-
-use common::algorithms::union_find::*;
+use common::algorithms::union_find::UnionFind;
 
 impl Solution {
     pub fn find_critical_and_pseudo_critical_edges(n: i32, edges: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
@@ -13,17 +11,11 @@ impl Solution {
             edge_id: &Vec<usize>,
             n: i32,
         ) -> i32 {
-            let mut parent = HashMap::new();
-            let mut size = HashMap::new();
+            let mut graph = UnionFind::new();
             let mut weight = 0;
             let mut n = n;
             if include {
-                union(
-                    &edges[edge_idx][0],
-                    &edges[edge_idx][1],
-                    &mut parent,
-                    &mut size,
-                );
+                graph.union(&edges[edge_idx][0], &edges[edge_idx][1]);
                 weight += edges[edge_idx][2];
                 n -= 1;
             }
@@ -32,7 +24,7 @@ impl Solution {
                     continue;
                 }
                 let edge = &edges[idx];
-                if union(&edge[0], &edge[1], &mut parent, &mut size) {
+                if graph.union(&edge[0], &edge[1]) {
                     weight += edge[2];
                     n -= 1;
                 }

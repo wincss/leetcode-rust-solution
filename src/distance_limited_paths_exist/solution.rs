@@ -1,8 +1,6 @@
 use crate::*;
 
-use std::collections::HashMap;
-
-use common::algorithms::union_find::*;
+use common::algorithms::union_find::UnionFind;
 
 impl Solution {
     pub fn distance_limited_paths_exist(
@@ -18,21 +16,15 @@ impl Solution {
 
         let mut result = vec![false; queries.len()];
 
-        let mut parent = HashMap::new();
-        let mut size = HashMap::new();
+        let mut graph = UnionFind::new();
 
         let mut edge_idx = 0_usize;
         for (i, v) in queries {
             while edge_idx < n && edges[edge_idx][2] < v[2] {
-                union(
-                    &edges[edge_idx][0],
-                    &edges[edge_idx][1],
-                    &mut parent,
-                    &mut size,
-                );
+                graph.union(&edges[edge_idx][0], &edges[edge_idx][1]);
                 edge_idx += 1;
             }
-            result[i] = find(&v[0], &mut parent, &mut size) == find(&v[1], &mut parent, &mut size);
+            result[i] = graph.find(&v[0]) == graph.find(&v[1]);
         }
 
         result

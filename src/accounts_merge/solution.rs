@@ -2,18 +2,17 @@ use crate::*;
 
 use std::collections::{HashMap, HashSet};
 
-use common::algorithms::union_find::*;
+use common::algorithms::union_find::UnionFind;
 
 impl Solution {
     pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
-        let mut parent = HashMap::new();
-        let mut size = HashMap::new();
+        let mut groups = UnionFind::new();
         let mut mail_to_name = HashMap::new();
         for item in accounts.iter() {
             let n = item.len();
             mail_to_name.insert(&item[1], &item[0]);
             for i in 2..n {
-                union(&&item[1], &&item[i], &mut parent, &mut size);
+                groups.union(&&item[1], &&item[i]);
             }
         }
         let mut mailgroup = HashMap::new();
@@ -21,7 +20,7 @@ impl Solution {
         for item in accounts.iter() {
             let n = item.len();
             for i in 1..n {
-                let group = find(&&item[i], &mut parent, &mut size);
+                let group = groups.find(&&item[i]);
                 mailgroup
                     .entry(group)
                     .or_insert(HashSet::new())

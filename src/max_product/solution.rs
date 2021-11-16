@@ -1,7 +1,25 @@
 use crate::*;
 
 impl Solution {
-    pub fn max_product(s: String) -> i32 {
+    pub fn max_product_318(words: Vec<String>) -> i32 {
+        let n = words.len();
+        let mut masks = vec![0; n];
+        for (idx, word) in words.iter().enumerate() {
+            for c in word.chars() {
+                masks[idx] |= 1 << (c as u8 - 97);
+            }
+        }
+        let mut max = 0;
+        for i in 0..n {
+            for j in 0..n {
+                if masks[i] & masks[j] == 0 {
+                    max = max.max(words[i].len() * words[j].len());
+                }
+            }
+        }
+        max as i32
+    }
+    pub fn max_product_2002(s: String) -> i32 {
         fn check(s: &Vec<char>, n: usize, mask: i32) -> bool {
             let mut left = 0;
             let mut right = n - 1;

@@ -1,19 +1,22 @@
 use crate::*;
 
+use std::collections::HashMap;
 impl Solution {
     pub fn max_product_318(words: Vec<String>) -> i32 {
-        let n = words.len();
-        let mut masks = vec![0; n];
-        for (idx, word) in words.iter().enumerate() {
+        let mut masks = HashMap::new();
+        for word in words.iter() {
+            let mut mask = 0;
             for c in word.chars() {
-                masks[idx] |= 1 << (c as u8 - 97);
+                mask |= 1 << (c as u8 - 97);
             }
+            let v = masks.entry(mask).or_insert(0);
+            *v = word.len().max(*v);
         }
         let mut max = 0;
-        for i in 0..n {
-            for j in 0..n {
-                if masks[i] & masks[j] == 0 {
-                    max = max.max(words[i].len() * words[j].len());
+        for (&mask1, &len1) in masks.iter() {
+            for (&mask2, &len2) in masks.iter() {
+                if mask1 & mask2 == 0 {
+                    max = max.max(len1 * len2);
                 }
             }
         }

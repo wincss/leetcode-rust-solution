@@ -136,6 +136,7 @@ pub mod find_shortest_sub_array;
 pub mod find_subsequences;
 pub mod find_target_sum_ways;
 pub mod find_the_difference;
+pub mod find_tilt;
 pub mod find_unsorted_subarray;
 pub mod find_whether_exists_path;
 pub mod find_words;

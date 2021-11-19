@@ -108,6 +108,7 @@ pub mod find_integers;
 pub mod find_itinerary;
 pub mod find_ladders;
 pub mod find_length_of_lcis;
+pub mod find_lhs;
 pub mod find_longest_word;
 pub mod find_lu_slength;
 pub mod find_max_average;

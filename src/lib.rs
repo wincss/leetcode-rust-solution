@@ -215,6 +215,7 @@ pub mod ladder_length;
 pub mod large_group_positions;
 pub mod largest_divisible_subset;
 pub mod largest_number;
+pub mod largest_sum_of_averages;
 pub mod last_stone_weight;
 pub mod last_stone_weight_ii;
 pub mod leaf_similar;

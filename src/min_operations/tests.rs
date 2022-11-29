@@ -30,3 +30,18 @@ fn case_5() {
         3
     );
 }
+
+#[test]
+fn case_1758_1() {
+    assert_eq!(Solution::min_operations_1758(s!("0100")), 1);
+}
+
+#[test]
+fn case_1758_2() {
+    assert_eq!(Solution::min_operations_1758(s!("10")), 0);
+}
+
+#[test]
+fn case_1758_3() {
+    assert_eq!(Solution::min_operations_1758(s!("1111")), 2);
+}

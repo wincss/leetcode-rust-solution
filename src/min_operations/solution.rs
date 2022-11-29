@@ -22,6 +22,14 @@ impl Solution {
         (n - d.len()) as i32
     }
 
+    pub fn min_operations_1758(s: String) -> i32 {
+        let mut v = [0, 0];
+        for (i, c) in s.chars().enumerate() {
+            v[i & 1 ^ (c == '0') as usize] += 1;
+        }
+        v.iter().min().unwrap().clone()
+    }
+
     pub fn min_operations_1827(nums: Vec<i32>) -> i32 {
         let mut op = 0;
         let mut last = 0;
